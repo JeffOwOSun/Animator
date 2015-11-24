@@ -131,6 +131,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -150,6 +151,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="InverseKinematics.cpp" />
     <ClCompile Include="linearcurveevaluator.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -162,6 +164,8 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="MarchingCube.cpp" />
+    <ClCompile Include="MetaBall.cpp" />
     <ClCompile Include="modelerapp.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -192,12 +196,19 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="robotarm.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
+    <ClCompile Include="model\feedbackModel.cpp" />
+    <ClCompile Include="model\generalModel.cpp" />
+    <ClCompile Include="model\IndicatorModel.cpp" />
+    <ClCompile Include="model\MengMei.cpp" />
+    <ClCompile Include="model\MengMeiEye.cpp" />
+    <ClCompile Include="model\MengMeiFoot.cpp" />
+    <ClCompile Include="model\MengMeiHand.cpp" />
+    <ClCompile Include="model\MengMeiHead.cpp" />
+    <ClCompile Include="model\MengMeiLowerLeg.cpp" />
+    <ClCompile Include="model\MengMeiMetaBall.cpp" />
+    <ClCompile Include="model\MengMeiView.cpp" />
+    <ClCompile Include="model\model.cpp" />
+    <ClCompile Include="model\modelController.cpp" />
     <ClCompile Include="bitmap.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -252,17 +263,35 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curve.h" />
     <ClInclude Include="curveevaluator.h" />
+    <ClInclude Include="InverseKinematics.h" />
     <ClInclude Include="linearcurveevaluator.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="MarchingCube.h" />
+    <ClInclude Include="MetaBall.h" />
     <ClInclude Include="modelerdraw.h" />
+    <ClInclude Include="modelerglobals.h" />
     <ClInclude Include="modelerui.h" />
     <ClInclude Include="modeleruiwindows.h" />
     <ClInclude Include="modelerview.h" />
     <ClInclude Include="bitmap.h" />
+    <ClInclude Include="model\feedbackModel.h" />
+    <ClInclude Include="model\generalModel.h" />
+    <ClInclude Include="model\indicatorModel.h" />
+    <ClInclude Include="model\MengMei.h" />
+    <ClInclude Include="model\MengMeiEye.h" />
+    <ClInclude Include="model\MengMeiFoot.h" />
+    <ClInclude Include="model\MengMeiHand.h" />
+    <ClInclude Include="model\MengMeiHead.h" />
+    <ClInclude Include="model\MengMeiLowerLeg.h" />
+    <ClInclude Include="model\MengMeiMetaBall.h" />
+    <ClInclude Include="model\MengMeiView.h" />
+    <ClInclude Include="model\model.h" />
+    <ClInclude Include="model\modelController.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="particleSystem.h" />
     <ClInclude Include="point.h" />
@@ -273,9 +302,11 @@
     <ClInclude Include="rect.h" />
     <ClInclude Include="rulerwindow.h" />
     <ClInclude Include="mat.h" />
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="vec.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Animator.ncb" />
     <None Include="cleanskel.pl" />
     <None Include="modeleruiwindows.fl" />
     <None Include="skelrenamer.pl" />

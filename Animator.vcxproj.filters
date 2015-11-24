@@ -69,9 +69,6 @@
     <ClCompile Include="modelerview.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="robotarm.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="bitmap.cpp">
       <Filter>Source Files\Particles</Filter>
     </ClCompile>
@@ -98,6 +95,57 @@
     </ClCompile>
     <ClCompile Include="rulerwindow.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="model\feedbackModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\generalModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\IndicatorModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMei.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiEye.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiFoot.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiHand.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiHead.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiLowerLeg.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiMetaBall.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiView.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\model.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\modelController.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InverseKinematics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MetaBall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MarchingCube.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +209,60 @@
     <ClInclude Include="vec.h">
       <Filter>Header Files\Math.</Filter>
     </ClInclude>
+    <ClInclude Include="model\feedbackModel.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\generalModel.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\indicatorModel.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMei.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiEye.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiFoot.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiHand.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiHead.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiLowerLeg.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiMetaBall.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiView.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\model.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\modelController.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerglobals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InverseKinematics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaBall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cleanskel.pl">
@@ -172,5 +274,6 @@
     <None Include="skelrenamer.pl">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Animator.ncb" />
   </ItemGroup>
 </Project>

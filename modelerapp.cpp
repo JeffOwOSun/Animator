@@ -132,6 +132,8 @@ void ModelerApplication::SetControlValue(int controlNumber, double value)
     m_ui->controlValue(controlNumber, value);
 }
 
+//TODO: IMPLEMENT THE FUNCTION CONTROLS NEEDED BY IK
+
 ParticleSystem *ModelerApplication::GetParticleSystem()
 {
 	return ps;

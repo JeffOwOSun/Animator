@@ -8,6 +8,7 @@
 #include <FL/gl.h>
 #include <cstdio>
 
+#include "modelerglobals.h"
 
 enum DrawModeSetting_t 
 { NONE=0, NORMAL, WIREFRAME, FLATSHADE, };
@@ -55,6 +56,9 @@ private:
 // ****************************************************************************
 
 // Set the current material properties
+void _setupOpenGl();
+void _dump_current_modelview(void);
+void _dump_current_material(void);
 void setAmbientColor(float r, float g, float b);
 void setDiffuseColor(float r, float g, float b);
 void setSpecularColor(float r, float g, float b);
