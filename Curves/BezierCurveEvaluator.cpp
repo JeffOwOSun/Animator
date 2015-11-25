@@ -10,8 +10,6 @@
 */
 
 #include "BezierCurveEvaluator.h"
-#include "../vec.h"
-#include "../mat.h"
 
 #define SEGMENT 30
 
