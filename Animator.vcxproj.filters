@@ -138,13 +138,13 @@
     <ClCompile Include="stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InverseKinematics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MetaBall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MarchingCube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -252,9 +252,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="modelerglobals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InverseKinematics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MetaBall.h">

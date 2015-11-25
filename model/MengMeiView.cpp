@@ -1,5 +1,5 @@
 #include "MengMeiView.h"
-#include "..\InverseKinematics.h"
+//#include "..\InverseKinematics.h"
 //for debug use
 #include <ctime>
 
@@ -59,38 +59,38 @@ void MengMeiView::draw()
 		*/
 		//DO INVERSE KINEMATICS
 
-		if (VAL(INVERSE_KINEMATICS)) {
-			if (!IKLastState) {
-				//retrieve the current location of parts
-				std::vector<double> constrains;
-				ModelNames handles[] = { HEAD, LEFTHAND, RIGHTHAND, LEFTFOOT, RIGHTFOOT };
-				for (auto handle : handles) {
-					Vec3f constrain = Model::m_modelList[handle]->getOrigin();
-					constrains.push_back(constrain[0]);
-					constrains.push_back(constrain[1]);
-					constrains.push_back(constrain[2]);
-				}
-				//set the constrains to be the current location of parts
-				const int startPos = HEAD_CSTRN_X;
-				for (int i = 0; i + startPos <= RFOOT_CSTRN_Z; ++i) {
-					SET(i + startPos, constrains[i]);
-				}
-				IKLastState = true;
-			}
+		//if (VAL(INVERSE_KINEMATICS)) {
+		//	if (!IKLastState) {
+		//		//retrieve the current location of parts
+		//		std::vector<double> constrains;
+		//		ModelNames handles[] = { HEAD, LEFTHAND, RIGHTHAND, LEFTFOOT, RIGHTFOOT };
+		//		for (auto handle : handles) {
+		//			Vec3f constrain = Model::m_modelList[handle]->getOrigin();
+		//			constrains.push_back(constrain[0]);
+		//			constrains.push_back(constrain[1]);
+		//			constrains.push_back(constrain[2]);
+		//		}
+		//		//set the constrains to be the current location of parts
+		//		const int startPos = HEAD_CSTRN_X;
+		//		for (int i = 0; i + startPos <= RFOOT_CSTRN_Z; ++i) {
+		//			SET(i + startPos, constrains[i]);
+		//		}
+		//		IKLastState = true;
+		//	}
 
-			//draw the constraint points
-			Model::m_modelList[HEADCONSTRAINT]->Draw();
-			Model::m_modelList[LHANDCONSTRAINT]->Draw();
-			Model::m_modelList[RHANDCONSTRAINT]->Draw();
-			Model::m_modelList[LFOOTCONSTRAINT]->Draw();
-			Model::m_modelList[RFOOTCONSTRAINT]->Draw();
+		//	//draw the constraint points
+		//	Model::m_modelList[HEADCONSTRAINT]->Draw();
+		//	Model::m_modelList[LHANDCONSTRAINT]->Draw();
+		//	Model::m_modelList[RHANDCONSTRAINT]->Draw();
+		//	Model::m_modelList[LFOOTCONSTRAINT]->Draw();
+		//	Model::m_modelList[RFOOTCONSTRAINT]->Draw();
 
-			//get the optimized parameters
-			IK::optimize();
-		}
-		else {
-			IKLastState = false;
-		}
+		//	//get the optimized parameters
+		//	IK::optimize();
+		//}
+		//else {
+		//	IKLastState = false;
+		//}
 		m_MengMei.Draw(VAL(LEVEL_OF_DETAIL));
 	//}
 }
