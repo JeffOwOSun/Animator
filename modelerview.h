@@ -38,6 +38,8 @@ public:
 	float t;
 	void update();
 	bool save_bmp;
+protected:
+	virtual void onLighting();
 };
 
 
