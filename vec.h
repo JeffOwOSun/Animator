@@ -829,7 +829,7 @@ inline Vec4<T> operator *(const Mat4<T>& a, const Vec4<T>& v) {
 }
 
 template <class T>
-inline Vec4<T> operator *( const Vec4<T>& v, Mat4<T>& a ){
+inline Vec4<T> operator *( const Vec4<T>& v, const Mat4<T>& a ){
 	return a.transpose() * v;
 }
 
