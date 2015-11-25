@@ -147,6 +147,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Curves\BezierCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curve.h">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="MarchingCube.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\BezierCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
