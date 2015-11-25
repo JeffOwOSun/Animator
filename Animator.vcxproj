@@ -197,7 +197,6 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="model\feedbackModel.cpp" />
     <ClCompile Include="model\generalModel.cpp" />
     <ClCompile Include="model\IndicatorModel.cpp" />
     <ClCompile Include="model\MengMei.cpp" />
@@ -206,7 +205,6 @@
     <ClCompile Include="model\MengMeiHand.cpp" />
     <ClCompile Include="model\MengMeiHead.cpp" />
     <ClCompile Include="model\MengMeiLowerLeg.cpp" />
-    <ClCompile Include="model\MengMeiMetaBall.cpp" />
     <ClCompile Include="model\MengMeiView.cpp" />
     <ClCompile Include="model\model.cpp" />
     <ClCompile Include="model\modelController.cpp" />
@@ -280,7 +278,6 @@
     <ClInclude Include="modeleruiwindows.h" />
     <ClInclude Include="modelerview.h" />
     <ClInclude Include="bitmap.h" />
-    <ClInclude Include="model\feedbackModel.h" />
     <ClInclude Include="model\generalModel.h" />
     <ClInclude Include="model\indicatorModel.h" />
     <ClInclude Include="model\MengMei.h" />
@@ -289,7 +286,6 @@
     <ClInclude Include="model\MengMeiHand.h" />
     <ClInclude Include="model\MengMeiHead.h" />
     <ClInclude Include="model\MengMeiLowerLeg.h" />
-    <ClInclude Include="model\MengMeiMetaBall.h" />
     <ClInclude Include="model\MengMeiView.h" />
     <ClInclude Include="model\model.h" />
     <ClInclude Include="model\modelController.h" />

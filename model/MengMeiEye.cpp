@@ -10,4 +10,4 @@ void MengMeiEye::onDraw()
 	glDisable(GL_TEXTURE_2D);
 }
 
-MengMeiEye::MengMeiEye(ModelNames name) : Model(name) {}
+MengMeiEye::MengMeiEye() : Model() {}

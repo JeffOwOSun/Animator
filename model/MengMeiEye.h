@@ -6,7 +6,7 @@
 class MengMeiEye : public Model
 {
 public:
-	MengMeiEye(ModelNames name);
+	MengMeiEye();
 	void onDraw();
 
 private:

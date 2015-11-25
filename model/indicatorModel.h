@@ -5,7 +5,7 @@
 
 class IndicatorModel: public Model{
 public:
-	IndicatorModel(ModelNames name);
+	IndicatorModel();
 	void onDraw();
 };
 

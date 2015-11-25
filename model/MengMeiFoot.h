@@ -7,7 +7,7 @@
 class MengMeiFoot : public Model
 {
 public:
-	MengMeiFoot(ModelNames name);
+	MengMeiFoot();
 	void onDraw();
 };
 
