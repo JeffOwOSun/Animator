@@ -1,7 +1,7 @@
 
 #include "MengMeiMetaBall.h"
 
-MengMeiMetaBall::MengMeiMetaBall() :Model(HEAD)
+MengMeiMetaBall::MengMeiMetaBall() :Model()
 {
 
 }

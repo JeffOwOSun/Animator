@@ -96,9 +96,6 @@
     <ClCompile Include="rulerwindow.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="model\feedbackModel.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="model\generalModel.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -121,9 +118,6 @@
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="model\MengMeiLowerLeg.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="model\MengMeiMetaBall.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="model\MengMeiView.cpp">
@@ -209,9 +203,6 @@
     <ClInclude Include="vec.h">
       <Filter>Header Files\Math.</Filter>
     </ClInclude>
-    <ClInclude Include="model\feedbackModel.h">
-      <Filter>Header Files\Model.</Filter>
-    </ClInclude>
     <ClInclude Include="model\generalModel.h">
       <Filter>Header Files\Model.</Filter>
     </ClInclude>
@@ -234,9 +225,6 @@
       <Filter>Header Files\Model.</Filter>
     </ClInclude>
     <ClInclude Include="model\MengMeiLowerLeg.h">
-      <Filter>Header Files\Model.</Filter>
-    </ClInclude>
-    <ClInclude Include="model\MengMeiMetaBall.h">
       <Filter>Header Files\Model.</Filter>
     </ClInclude>
     <ClInclude Include="model\MengMeiView.h">

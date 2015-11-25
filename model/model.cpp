@@ -5,13 +5,13 @@
 #include "model.h"
 #include <Fl/gl.h>
 
-map<ModelNames, Model* > Model::m_modelList;
+//map<ModelNames, Model* > Model::m_modelList;
 
-Model::Model(ModelNames name, Model* parent) :m_name(name), m_parent(parent), m_beforeDraw(NULL)
+Model::Model(Model* parent) :m_parent(parent), m_beforeDraw(NULL)
 {
 	anim_cnt = 0;
 	//add this model to the static modelList
-	m_modelList[name] = this;
+	//m_modelList[name] = this;
 }
 
 void Model::addChild(Model* p_model)
