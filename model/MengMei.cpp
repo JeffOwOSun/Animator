@@ -1,10 +1,10 @@
 
 #include "MengMei.h"
-#include "MengMeiHand.h"
+//#include "MengMeiHand.h"
 #include "MengMeiHead.h"
 #include "MengMeiLowerLeg.h"
-#include "MengMeiMetaBall.h"
-#include "../MetaBall.h"
+//#include "MengMeiMetaBall.h"
+//#include "../MetaBall.h"
 #include "MengMeiFoot.h"
 #include "indicatorModel.h"
 
@@ -27,7 +27,7 @@ MengMei::MengMei() :Model(MENGMEI)
 			leftUpperArm->getController()->setRotate(70, 180, -60);
 			
 				GeneralModel* leftElbow = new GeneralModel(LEFTELBOW, GeneralModel::SPHERE_SHAPE);
-				leftElbow->setParam(0.1f);
+				leftElbow->setParam(0.6f);
 				leftElbow->getController()->setTransZ(2.7f);
 				leftElbow->m_beforeDraw = [](Model* self) {
 					self->getController()->setRotateZ(VAL(LEFT_UARM_ROTATE));
@@ -35,16 +35,21 @@ MengMei::MengMei() :Model(MENGMEI)
 
 					GeneralModel* leftLowerArm = new GeneralModel(LEFTLOWERARM, GeneralModel::CYLINDER_SHAPE);
 					leftLowerArm->setTexture(std::string("./res/MengMeiSkin.jpg"));
-					leftLowerArm->setParam(3.0f, 0.3f, 0.20f);
+					leftLowerArm->setParam(3.0f, 0.5f, 0.4f);
 					leftLowerArm->m_beforeDraw = [](Model* self) {
 						self->getController()->setRotateY(VAL(LEFT_ELBOW));
 					};
 						
+#if 0 //remove metaball for speed
 						Model* leftHand = new MengMeiHand(LEFTHAND);
 						leftHand->getController()->setTransZ(3.5f)->setRotateY(-90);
-
-							Model* metaball = new MengMeiMetaBall();
-						leftHand->addChild(metaball);
+#else
+						GeneralModel* leftHand = new GeneralModel(RIGHTHAND, GeneralModel::SPHERE_SHAPE);
+						leftHand->setParam(0.5f);
+						leftHand->getController()->setTransZ(3.0f);
+#endif
+						/*	Model* metaball = new MengMeiMetaBall();
+						leftHand->addChild(metaball);*/
 					leftLowerArm->addChild(leftHand);
 				leftElbow->addChild(leftLowerArm);
 			leftUpperArm->addChild(leftElbow);
