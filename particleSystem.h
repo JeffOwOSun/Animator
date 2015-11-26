@@ -17,19 +17,21 @@
 #define __PARTICLE_SYSTEM_H__
 
 #include "vec.h"
+#include "model\ParticleSource.h"
+#include <vector>
+#include <map>
+#include <cmath>
 
 
-
+//implemented as a singleton
 class ParticleSystem {
 
 public:
-
-
-
-	/** Constructor **/
-	ParticleSystem();
-
-
+	static ParticleSystem& Instance() {
+		static ParticleSystem instance;
+		return instance;
+	}
+	
 	/** Destructor **/
 	virtual ~ParticleSystem();
 
@@ -40,6 +42,7 @@ public:
 
 	// This fxn should save the configuration of all particles
 	// at current time t.
+	// NOTE: NEVER CALLED
 	virtual void bakeParticles(float t);
 
 	// This function should compute forces acting on all particles
@@ -67,19 +70,21 @@ public:
 	// These accessor fxns are implemented for you
 	float getBakeStartTime() { return bake_start_time; }
 	float getBakeEndTime() { return bake_end_time; }
-	float getBakeFps() { return bake_fps; }
+	float getBakeFps() { return bake_fps; } //NO USE
 	bool isSimulate() { return simulate; }
 	bool isDirty() { return dirty; }
 	void setDirty(bool d) { dirty = d; }
 
-
+	void addParticleSource(ParticleSource* ps) {
+		m_particleSrcs.push_back(ps);
+	}
 
 protected:
 	
 
 
 	/** Some baking-related state **/
-	float bake_fps;						// frame rate at which simulation was baked
+	int bake_fps;						// frame rate at which simulation was baked //NO USE
 	float bake_start_time;				// time at which baking started 
 										// These 2 variables are used by the UI for
 										// updating the grey indicator 
@@ -89,6 +94,24 @@ protected:
 	bool simulate;						// flag for simulation mode
 	bool dirty;							// flag for updating ui (don't worry about this)
 
+	std::vector<ParticleSource*> m_particleSrcs;
+	std::map<int, Particles> m_cache; //maps frame to whole state of particle
+
+	Vec3d m_gravity; //TODO: initialize this in constructor
+
+	//time conversion functions that prevent precision lost
+	int get_frame(float t) {
+		return round(t * bake_fps);
+	}
+	/*float get_time(int frame) {
+		return (float)frame / bake_fps;
+	}*/
+
+private:
+	/** Constructor **/
+	ParticleSystem();
+	ParticleSystem(ParticleSystem const&) = delete;
+	void operator=(ParticleSystem const&) = delete;
 };
 
 

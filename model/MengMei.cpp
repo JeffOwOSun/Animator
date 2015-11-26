@@ -7,6 +7,9 @@
 //#include "../MetaBall.h"
 #include "MengMeiFoot.h"
 #include "indicatorModel.h"
+#include "ParticleSource.h"
+#include "../modelerapp.h"
+#include "../particleSystem.h"
 
 MengMei::MengMei() :Model()
 {
@@ -128,6 +131,9 @@ MengMei::MengMei() :Model()
 						self->getController()->setRotateZ(VAL(LEFT_FOOT_LR));
 					};
 
+						ParticleSource* leftThruster = new ParticleSource();
+						leftFoot->addChild(leftThruster);
+						ParticleSystem::Instance().addParticleSource(leftThruster);
 				leftLowerLeg->addChild(leftFoot);
 
 			leftKnee->addChild(leftLowerLeg);
@@ -214,6 +220,8 @@ MengMei::MengMei() :Model()
 	rightFootConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(RFOOT_CSTRN_X), VAL(RFOOT_CSTRN_Y), VAL(RFOOT_CSTRN_Z));
 	};
+
+	getController()->setTrans(0.0, 2.0, 0.0);
 }
 
 void MengMei::onDraw()

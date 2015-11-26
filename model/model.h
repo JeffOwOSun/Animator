@@ -31,8 +31,9 @@ public:
 	void setParent(Model* parent) { m_parent = parent; }
 
 	//get the origin of this Object Coordinate Space
-	Vec3f getOrigin();
+	Vec3d getOrigin();
 
+	Mat4d getTransMatrix();
 	/**
 	 * \brief Call controller, be called by modelView
 	 */
