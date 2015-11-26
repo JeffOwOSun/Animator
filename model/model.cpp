@@ -128,15 +128,15 @@ void Model::drawTorus(GLdouble r1, GLdouble r2)
 	}
 }
 
-Vec3f Model::getOrigin() {
-	Vec4f origin = Vec4f(0, 0, 0, 1);
+Vec3d Model::getOrigin() {
+	Vec4d origin = Vec4d(0, 0, 0, 1);
 	Model* current = this;
 	origin = getController()->getMatrix() * origin;
 	while (current = current->getParent()) {
 		origin = current->getController()->getMatrix() * origin;
 	}
 	//convert homogeneous coordinate to 3D spatial coordinate
-	return Vec3f(origin[0] / origin[3], origin[1] / origin[3], origin[2] / origin[3]);
+	return Vec3d(origin[0] / origin[3], origin[1] / origin[3], origin[2] / origin[3]);
 }
 
 Model::~Model()

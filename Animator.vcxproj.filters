@@ -141,6 +141,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="model\ParticleSource.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curve.h">
@@ -247,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="MarchingCube.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model\ParticleSource.h">
+      <Filter>Header Files\Model.</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

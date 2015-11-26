@@ -4,7 +4,6 @@
 #include <list>
 #include <map>
 #include <random>
-#include "../ParticleSystem.h"
 #include "model.h"
 #include "../vec.h"
 
@@ -16,12 +15,14 @@ public:
 	float life;
 };
 
+typedef list<Particle> Particles; //use list to remove particles more easily
+
+/**
+ * The sole purpose of this class is to facilitate adding of new
+ * particles.
+ */
 class ParticleSource : public Model
 {
-	friend class Particle;
-	typedef list<Particle> Particles; //use list to remove particles more easily
-	map<float,Particles> m_cache;
-
 	//parameters for the particle source
 	double m_angle; //360 degrees for a spherical explosion. Spherical symmetry with respect to z axis.
 	Vec3d m_gravity; //gravitational acceleration for curved projectiles
@@ -30,19 +31,14 @@ class ParticleSource : public Model
 	int m_numParticles; //number of particles projected
 	float m_initialLife;
 
-	//parameters for a draw
-	float m_time;
-
 	//random distributions
 	std::default_random_engine generator1, generator2, generator3;
 	std::uniform_real_distribution<double> theta_distribution;
 	std::uniform_real_distribution<double> phi_distribution;
 	std::uniform_real_distribution<double> speed_distribution;
 
-	ParticleSystem * m_parSys;
-	
 public:
-	ParticleSource(ParticleSystem * parSys) : m_parSys(parSys), m_minSpeed(1.0), m_maxSpeed(1.0), m_initialLife(10.0), m_numParticles(10), m_gravity(0, -1, 0)
+	ParticleSource() : m_angle(10), m_minSpeed(1.0), m_maxSpeed(1.0), m_initialLife(10.0), m_numParticles(1), m_gravity(0, -1, 0)
 	{}
 
 	~ParticleSource();
@@ -66,33 +62,12 @@ public:
 		m_initialLife = initialLife;
 	}
 
-	//draw the particle system with given m_time
+	//does nothing here
 	virtual void onDraw();
 
-	//propagate the particles for one time delta
-	void propagate(float delta);
-
 	//generate new particles
-	void newParticles(int num, float time);
+	void newParticles(Particles& particles);
 
-	//initialize the partcles
-	void initialize(float time);
-
-	//bake to the given second
-	void bakeTo(float time, float delta_t);
-
-	//clear the cache
-	void clearCache() {
-		m_cache.clear();
-	}
-
-	//set the draw time. Should be called by ps
-	void setTime(float time) {
-		m_time = time;
-	}
-	float getTime() {
-		return m_time;
-	}
 };
 
 #endif

@@ -7,6 +7,8 @@
 //#include "../MetaBall.h"
 #include "MengMeiFoot.h"
 #include "indicatorModel.h"
+#include "ParticleSource.h"
+#include "../modelerapp.h"
 
 MengMei::MengMei() :Model()
 {
@@ -128,6 +130,9 @@ MengMei::MengMei() :Model()
 						self->getController()->setRotateZ(VAL(LEFT_FOOT_LR));
 					};
 
+						ParticleSource* leftThruster = new ParticleSource();
+						leftFoot->addChild(leftThruster);
+						ModelerApplication::Instance()->GetParticleSystem()->addParticleSource(leftThruster);
 				leftLowerLeg->addChild(leftFoot);
 
 			leftKnee->addChild(leftLowerLeg);
