@@ -14,7 +14,7 @@
  * Constructors
  ***************/
 
-ParticleSystem::ParticleSystem() : bake_fps(30), simulate(false), dirty(false)
+ParticleSystem::ParticleSystem() : bake_fps(19), simulate(false), dirty(false), m_gravity(0, -10, 0)
 {
 	// TODO
 
@@ -161,7 +161,7 @@ void ParticleSystem::drawParticles(float t)
 	for (Particle & particle : particles) {
 		glPushMatrix();
 		glTranslated(particle.position[0], particle.position[1], particle.position[2]);
-		drawSphere(0.03);
+		drawSphere(0.1);
 		glPopMatrix();
 	}
 }

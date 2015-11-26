@@ -139,6 +139,15 @@ Vec3d Model::getOrigin() {
 	return Vec3d(origin[0] / origin[3], origin[1] / origin[3], origin[2] / origin[3]);
 }
 
+Mat4d Model::getTransMatrix() {
+	Mat4d mtx = getController()->getMatrix();
+	Model* current = this;
+	while (current = current->getParent()) {
+		mtx = current->getController()->getMatrix() * mtx;
+	}
+	return mtx;
+}
+
 Model::~Model()
 {
 	for (Model* m : m_children)

@@ -8,8 +8,8 @@ void MengMeiView::draw()
 	ModelerView::draw();
 	//printf("MengMeiView::draw() %d\n", time(0));
 
-	glScaled(0.5,0.5,0.5);
-	glTranslated(0.0, 2.0, 0.0);
+	//glScaled(0.5,0.5,0.5);
+	//glTranslated(0.0, 2.0, 0.0);
 
 	//if (VAL(LSYS_SHOW) > 0) {
 	//	//draw the lsystem

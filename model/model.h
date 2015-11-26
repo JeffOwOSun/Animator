@@ -33,6 +33,7 @@ public:
 	//get the origin of this Object Coordinate Space
 	Vec3d getOrigin();
 
+	Mat4d getTransMatrix();
 	/**
 	 * \brief Call controller, be called by modelView
 	 */
