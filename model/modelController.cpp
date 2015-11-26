@@ -13,13 +13,13 @@ void modelController::Control()
 	glRotatef(rotate.x, 1.0f, 0.0f, 0.0f);
 }
 
-Mat4f modelController::getMatrix()
+Mat4d modelController::getMatrix()
 {
-	Mat4f result;
+	Mat4d result;
 
 	//translation matrix;
 	//CAUTION: DON'T USE *=, which is per element multiplication
-	result = result * Mat4f(
+	result = result * Mat4d(
 		1, 0, 0, trans.x,
 		0, 1, 0, trans.y,
 		0, 0, 1, trans.z,
@@ -27,7 +27,7 @@ Mat4f modelController::getMatrix()
 
 	//rotationZ
 	float rad = rotate.z * PI / 180;
-	result = result * Mat4f(
+	result = result * Mat4d(
 		cos(rad), -sin(rad), 0, 0,
 		sin(rad), cos(rad), 0, 0,
 		0, 0, 1, 0,
@@ -35,7 +35,7 @@ Mat4f modelController::getMatrix()
 
 	//rotationY
 	rad = rotate.y * PI / 180;
-	result = result * Mat4f(
+	result = result * Mat4d(
 		cos(rad), 0, sin(rad), 0,
 		0, 1, 0, 0,
 		-sin(rad), 0, cos(rad), 0,
@@ -43,7 +43,7 @@ Mat4f modelController::getMatrix()
 
 	//rotationX
 	rad = rotate.x * PI / 180;
-	result = result * Mat4f(
+	result = result * Mat4d(
 		1, 0, 0, 0,
 		0, cos(rad), -sin(rad), 0,
 		0, sin(rad), cos(rad), 0,
