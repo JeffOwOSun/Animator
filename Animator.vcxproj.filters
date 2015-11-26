@@ -147,6 +147,9 @@
     <ClCompile Include="Curves\BSplineCurveEvaluator.cpp">
       <Filter>Source Files\Curves</Filter>
     </ClCompile>
+    <ClCompile Include="Curves\CatmullRomCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curve.h">
@@ -258,6 +261,9 @@
       <Filter>Header Files\Curves.</Filter>
     </ClInclude>
     <ClInclude Include="Curves\BSplineCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\CatmullRomCurveEvaluator.h">
       <Filter>Header Files\Curves.</Filter>
     </ClInclude>
   </ItemGroup>
