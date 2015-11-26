@@ -19,17 +19,39 @@ void BSplineCurveEvaluator::evaluateCurve(
 	const bool& beWrap) const
 {
 	evaluatedPoints.clear();
-	evaluatedPoints.push_back(Point(0, controlPoints.front().y));
-	evaluatedPoints.push_back(Point(animationLength, controlPoints.back().y));
 
+	if (!beWrap) 
+	{
+		evaluatedPoints.push_back(Point(0, controlPoints.front().y));
+		evaluatedPoints.push_back(Point(animationLength, controlPoints.back().y));
+	}
+	
 	// a hack to make the endpoints controllable
 	vector<Point> controlPointsCopy;
-	controlPointsCopy.push_back(controlPoints.front());
-	controlPointsCopy.push_back(controlPoints.front());
-	controlPointsCopy.insert(controlPointsCopy.end(), controlPoints.begin(), controlPoints.end());
-	controlPointsCopy.push_back(controlPoints.back());
-	controlPointsCopy.push_back(controlPoints.back());
-
+	if (beWrap) 
+	{
+		Point start_p1 = Point((controlPoints.end() - 2)->x - animationLength,
+			(controlPoints.end() - 2)->y);
+		Point start_p2 = Point((controlPoints.end() - 1)->x - animationLength,
+			(controlPoints.end() - 1)->y);
+		Point end_p1 = Point((controlPoints.begin())->x + animationLength,
+			(controlPoints.begin())->y);
+		Point end_p2 = Point((controlPoints.begin() + 1)->x + animationLength,
+			(controlPoints.begin() + 1)->y);
+		controlPointsCopy.push_back(start_p1);
+		controlPointsCopy.push_back(start_p2);
+		controlPointsCopy.insert(controlPointsCopy.end(), controlPoints.begin(), controlPoints.end());
+		controlPointsCopy.push_back(end_p1);
+		controlPointsCopy.push_back(end_p2);
+	}
+	else
+	{
+		controlPointsCopy.push_back(controlPoints.front());
+		controlPointsCopy.push_back(controlPoints.front());
+		controlPointsCopy.insert(controlPointsCopy.end(), controlPoints.begin(), controlPoints.end());
+		controlPointsCopy.push_back(controlPoints.back());
+		controlPointsCopy.push_back(controlPoints.back());
+	}
 	const Mat4d basis = Mat4d(
 		1, 4, 1, 0,
 		0, 4, 2, 0,
@@ -52,7 +74,7 @@ void BSplineCurveEvaluator::evaluateCurve(
 		}
 		vector<Point> param_evaluated;
 		bezierCurveEvaluator.evaluateCurve(param_control, param_evaluated, animationLength, false);
-		evaluatedPoints.insert(evaluatedPoints.end(), param_evaluated.begin(), param_evaluated.end());
+		evaluatedPoints.insert(evaluatedPoints.end(), param_evaluated.begin(), param_evaluated.end()-2);
 	}
 
 }
