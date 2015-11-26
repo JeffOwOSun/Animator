@@ -108,7 +108,7 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 				//this is the very first tick in history
 				//add new particles
 				for (auto particleSrc : m_particleSrcs) {
-					particleSrc.newParticles(m_cache[get_frame(t)]);
+					particleSrc->newParticles(m_cache[get_frame(t)]);
 				}
 			}
 			else { //there's a last tick
@@ -122,18 +122,22 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 
 					//add new particles
 					for (auto particleSrc : m_particleSrcs) {
-						particleSrc.newParticles(m_cache[frame]);
+						particleSrc->newParticles(m_cache[frame]);
 					}
 
 					//simulate the particles
-					for (auto iter = m_cache[frame].begin(); iter != m_cache[frame].end(); ++iter) {
+					auto iter = m_cache[frame].begin();
+					while (iter != m_cache[frame].end()) {
 						Particle& particle = *iter;
 						particle.life -= delta_t;
 
 						//kill the ones that are dead
 						if (particle.life < 0) {
-							m_cache[frame].erase(iter);
+							iter = m_cache[frame].erase(iter);
 							continue;
+						}
+						else {
+							++iter;
 						}
 
 						//evolve
@@ -157,7 +161,7 @@ void ParticleSystem::drawParticles(float t)
 	for (Particle & particle : particles) {
 		glPushMatrix();
 		glTranslated(particle.position[0], particle.position[1], particle.position[2]);
-		drawSphere(0.1);
+		drawSphere(0.03);
 		glPopMatrix();
 	}
 }

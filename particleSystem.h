@@ -22,14 +22,16 @@
 #include <map>
 #include <cmath>
 
+
+//implemented as a singleton
 class ParticleSystem {
 
 public:
-
-	/** Constructor **/
-	ParticleSystem();
-
-
+	static ParticleSystem& Instance() {
+		static ParticleSystem instance;
+		return instance;
+	}
+	
 	/** Destructor **/
 	virtual ~ParticleSystem();
 
@@ -104,6 +106,12 @@ protected:
 	/*float get_time(int frame) {
 		return (float)frame / bake_fps;
 	}*/
+
+private:
+	/** Constructor **/
+	ParticleSystem();
+	ParticleSystem(ParticleSystem const&) = delete;
+	void operator=(ParticleSystem const&) = delete;
 };
 
 

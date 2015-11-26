@@ -19,8 +19,8 @@ void ParticleSource::newParticles(Particles& particles) {
 			velocity = Vec3d(cos(theta), sin(theta), 1 / tan(phi));
 			velocity.normalize();
 		}
-			
-		particle.velocity = velocity * speed;
+		
+		particle.velocity = getController()->getMatrix().inverse() * velocity * speed;
 
 		particles.push_back(particle);
 	}

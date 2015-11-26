@@ -38,7 +38,7 @@ class ParticleSource : public Model
 	std::uniform_real_distribution<double> speed_distribution;
 
 public:
-	ParticleSource() : m_angle(10), m_minSpeed(1.0), m_maxSpeed(1.0), m_initialLife(10.0), m_numParticles(1), m_gravity(0, -1, 0)
+	ParticleSource() : m_angle(10), m_minSpeed(0.1), m_maxSpeed(1.0), m_initialLife(10.0), m_numParticles(1), m_gravity(0, -10, 0)
 	{}
 
 	~ParticleSource();

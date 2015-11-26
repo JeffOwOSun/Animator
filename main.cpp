@@ -91,6 +91,6 @@ int main()
 	controls[RIGHT_UARM_ROTATE] = ModelerControl("Right Uarm Rotate", -90, 90, 1, 0);
 
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
-	ModelerApplication::Instance()->SetParticleSystem(new ParticleSystem);
+	ModelerApplication::Instance()->SetParticleSystem(&ParticleSystem::Instance());
     return ModelerApplication::Instance()->Run();
 }

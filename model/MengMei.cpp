@@ -9,6 +9,7 @@
 #include "indicatorModel.h"
 #include "ParticleSource.h"
 #include "../modelerapp.h"
+#include "../particleSystem.h"
 
 MengMei::MengMei() :Model()
 {
@@ -132,7 +133,7 @@ MengMei::MengMei() :Model()
 
 						ParticleSource* leftThruster = new ParticleSource();
 						leftFoot->addChild(leftThruster);
-						ModelerApplication::Instance()->GetParticleSystem()->addParticleSource(leftThruster);
+						ParticleSystem::Instance().addParticleSource(leftThruster);
 				leftLowerLeg->addChild(leftFoot);
 
 			leftKnee->addChild(leftLowerLeg);
