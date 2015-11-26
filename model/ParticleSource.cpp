@@ -2,9 +2,8 @@
 #include <cmath>
 #define PI 3.14159265358979
 
-void ParticleSource::newParticles(int num) {
-	auto iter = cache.rbegin();
-	Particles& particles = iter->second;
+void ParticleSource::newParticles(int num, float time) {
+	Particles& particles = m_cache[time];
 	//initialize the particles
 	for (int i = 0; i < num; ++i) {
 		Particle particle;
@@ -29,9 +28,9 @@ void ParticleSource::newParticles(int num) {
 }
 
 void ParticleSource::propagate(float delta_t) {
-	auto iter = cache.rbegin();
+	auto iter = m_cache.rbegin();
 	Particles& old_particles = iter->second;
-	Particles& new_particles = cache[iter->first + delta_t];
+	Particles& new_particles = m_cache[iter->first + delta_t];
 	//calculate the particles
 	for (auto i = old_particles.begin(); i != old_particles.end(); ++i) {
 		Particle newPar;
@@ -51,10 +50,27 @@ void ParticleSource::propagate(float delta_t) {
 	}
 }
 
+void ParticleSource::initialize(float time) {
+	//insert particles list at time
+	m_cache[time];
+	//create some new articles for later use
+	newParticles(m_numParticles, time);
+}
+
+void ParticleSource::bakeTo(float time, float delta_t) {
+	auto iter = m_cache.rbegin();
+	if (time < iter->first) return;
+
+	for (float t = iter->first + delta_t; t <= time; t += delta_t) {
+		propagate(delta_t);
+		newParticles(m_numParticles, t);
+	}
+}
+
 void ParticleSource::onDraw()
 {
-	auto iter = cache.find(m_time);
-	if (iter == cache.end()) return; //do nothing if this frame is not yet baken
+	auto iter = m_cache.find(m_time);
+	if (iter == m_cache.end()) return; //do nothing if this frame is not yet baken
 
 	Particles& particles = iter->second;
 	for (Particle & particle : particles) {

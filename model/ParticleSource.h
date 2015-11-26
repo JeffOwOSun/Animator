@@ -20,7 +20,7 @@ class ParticleSource : public Model
 {
 	friend class Particle;
 	typedef list<Particle> Particles; //use list to remove particles more easily
-	map<float,Particles> cache;
+	map<float,Particles> m_cache;
 
 	//parameters for the particle source
 	double m_angle; //360 degrees for a spherical explosion. Spherical symmetry with respect to z axis.
@@ -69,15 +69,29 @@ public:
 	//draw the particle system with given m_time
 	virtual void onDraw();
 
-	//generate new particles
-	void newParticles(int num);
-
 	//propagate the particles for one time delta
 	void propagate(float delta);
+
+	//generate new particles
+	void newParticles(int num, float time);
+
+	//initialize the partcles
+	void initialize(float time);
+
+	//bake to the given second
+	void bakeTo(float time, float delta_t);
+
+	//clear the cache
+	void clearCache() {
+		m_cache.clear();
+	}
 
 	//set the draw time. Should be called by ps
 	void setTime(float time) {
 		m_time = time;
+	}
+	float getTime() {
+		return m_time;
 	}
 };
 
