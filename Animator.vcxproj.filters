@@ -1,314 +1,288 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c7686d8a-1f55-4c4d-b763-ffdd9d260c8d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Curves">
+      <UniqueIdentifier>{d5f0fe0a-2ed6-4834-8c2b-1a937c8f0e33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{c13a68f3-0c0b-4295-8b5a-b0e0f9aac99b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Particles">
+      <UniqueIdentifier>{f59d4eec-bac6-4bf1-9e53-cd77c53818fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{65742b23-666b-4a0d-a9df-ea4b6e431f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9faa82ba-ba0c-40fc-b8de-253ba3319d22}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Curves.">
+      <UniqueIdentifier>{79e72725-3ada-40b1-a25a-ed53f7a3d8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model.">
+      <UniqueIdentifier>{4b2322ff-e362-4c94-99cc-baf9516baa78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Particles.">
+      <UniqueIdentifier>{3cf181b6-e89f-41cc-9480-f68363a106b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI.">
+      <UniqueIdentifier>{56fa2591-55db-4341-ae78-9763baf3a947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math.">
+      <UniqueIdentifier>{efe24e47-7820-4571-a9c3-b011c936d0ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{133b5350-744c-4417-8892-0df5578ace47}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
   </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <ProjectName>modeler</ProjectName>
-    <ProjectGuid>{B0805075-1647-435A-B2EA-5B4AB1618167}</ProjectGuid>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
-  </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Midl>
-      <TypeLibraryName>.\Release/Animator.tlb</TypeLibraryName>
-      <HeaderFileName>
-      </HeaderFileName>
-    </Midl>
-    <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>local/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;SAMPLE_SOLUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>.\Release/Animator.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-    </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
-    </ResourceCompile>
-    <Link>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;wsock32.lib;fltk.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Release\modeler.exe</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>local/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreSpecificDefaultLibraries>libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\Release/Animator.pdb</ProgramDatabaseFile>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
-      <TargetMachine>MachineX86</TargetMachine>
-      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-    </Link>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release/Animator.bsc</OutputFile>
-    </Bscmake>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Midl>
-      <TypeLibraryName>.\Debug/Animator.tlb</TypeLibraryName>
-      <HeaderFileName>
-      </HeaderFileName>
-    </Midl>
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>local/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;SAMPLE_SOLUTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\Debug/Animator.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-    </ClCompile>
-    <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
-    </ResourceCompile>
-    <Link>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;wsock32.lib;local/lib/fltk.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Debug\modeler.exe</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <IgnoreSpecificDefaultLibraries>libcmt;libcmtb;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\Debug/Animator.pdb</ProgramDatabaseFile>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
-      <TargetMachine>MachineX86</TargetMachine>
-      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-    </Link>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug/Animator.bsc</OutputFile>
-    </Bscmake>
-  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="curve.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Curves</Filter>
     </ClCompile>
     <ClCompile Include="curveevaluator.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Curves</Filter>
     </ClCompile>
     <ClCompile Include="linearcurveevaluator.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Curves</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MarchingCube.cpp" />
-    <ClCompile Include="MetaBall.cpp" />
     <ClCompile Include="modelerapp.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="modelerdraw.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="modelerui.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="modeleruiwindows.cxx">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="modelerview.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="model\generalModel.cpp" />
-    <ClCompile Include="model\IndicatorModel.cpp" />
-    <ClCompile Include="model\MengMei.cpp" />
-    <ClCompile Include="model\MengMeiEye.cpp" />
-    <ClCompile Include="model\MengMeiFoot.cpp" />
-    <ClCompile Include="model\MengMeiHand.cpp" />
-    <ClCompile Include="model\MengMeiHead.cpp" />
-    <ClCompile Include="model\MengMeiLowerLeg.cpp" />
-    <ClCompile Include="model\MengMeiView.cpp" />
-    <ClCompile Include="model\model.cpp" />
-    <ClCompile Include="model\modelController.cpp" />
     <ClCompile Include="bitmap.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Particles</Filter>
     </ClCompile>
-    <ClCompile Include="model\ParticleSource.cpp" />
     <ClCompile Include="particle.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Particles</Filter>
     </ClCompile>
     <ClCompile Include="particleSystem.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Particles</Filter>
     </ClCompile>
     <ClCompile Include="point.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Particles</Filter>
     </ClCompile>
     <ClCompile Include="pointObj.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\Particles</Filter>
     </ClCompile>
     <ClCompile Include="graphwidget.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="indicatorwindow.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="rect.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="rulerwindow.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="model\generalModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\IndicatorModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMei.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiEye.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiFoot.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiHand.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiHead.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiLowerLeg.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\MengMeiView.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\model.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\modelController.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MetaBall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MarchingCube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Curves\BezierCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="Curves\BSplineCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="Curves\CatmullRomCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="model\ParticleSource.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="curve.h" />
-    <ClInclude Include="curveevaluator.h" />
-    <ClInclude Include="linearcurveevaluator.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="MarchingCube.h" />
-    <ClInclude Include="MetaBall.h" />
-    <ClInclude Include="modelerdraw.h" />
-    <ClInclude Include="modelerglobals.h" />
-    <ClInclude Include="modelerui.h" />
-    <ClInclude Include="modeleruiwindows.h" />
-    <ClInclude Include="modelerview.h" />
-    <ClInclude Include="bitmap.h" />
-    <ClInclude Include="model\generalModel.h" />
-    <ClInclude Include="model\indicatorModel.h" />
-    <ClInclude Include="model\MengMei.h" />
-    <ClInclude Include="model\MengMeiEye.h" />
-    <ClInclude Include="model\MengMeiFoot.h" />
-    <ClInclude Include="model\MengMeiHand.h" />
-    <ClInclude Include="model\MengMeiHead.h" />
-    <ClInclude Include="model\MengMeiLowerLeg.h" />
-    <ClInclude Include="model\MengMeiView.h" />
-    <ClInclude Include="model\model.h" />
-    <ClInclude Include="model\modelController.h" />
-    <ClInclude Include="model\ParticleSource.h" />
-    <ClInclude Include="particle.h" />
-    <ClInclude Include="particleSystem.h" />
-    <ClInclude Include="point.h" />
-    <ClInclude Include="pointObj.h" />
-    <ClInclude Include="graphwidget.h" />
-    <ClInclude Include="indicatorwindow.h" />
-    <ClInclude Include="modelerapp.h" />
-    <ClInclude Include="rect.h" />
-    <ClInclude Include="rulerwindow.h" />
-    <ClInclude Include="mat.h" />
-    <ClInclude Include="stb_image.h" />
-    <ClInclude Include="vec.h" />
+    <ClInclude Include="curve.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="curveevaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="linearcurveevaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerdraw.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerui.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="modeleruiwindows.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerview.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmap.h">
+      <Filter>Header Files\Particles.</Filter>
+    </ClInclude>
+    <ClInclude Include="particle.h">
+      <Filter>Header Files\Particles.</Filter>
+    </ClInclude>
+    <ClInclude Include="particleSystem.h">
+      <Filter>Header Files\Particles.</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
+      <Filter>Header Files\Particles.</Filter>
+    </ClInclude>
+    <ClInclude Include="pointObj.h">
+      <Filter>Header Files\Particles.</Filter>
+    </ClInclude>
+    <ClInclude Include="graphwidget.h">
+      <Filter>Header Files\UI.</Filter>
+    </ClInclude>
+    <ClInclude Include="indicatorwindow.h">
+      <Filter>Header Files\UI.</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerapp.h">
+      <Filter>Header Files\UI.</Filter>
+    </ClInclude>
+    <ClInclude Include="rect.h">
+      <Filter>Header Files\UI.</Filter>
+    </ClInclude>
+    <ClInclude Include="rulerwindow.h">
+      <Filter>Header Files\UI.</Filter>
+    </ClInclude>
+    <ClInclude Include="mat.h">
+      <Filter>Header Files\Math.</Filter>
+    </ClInclude>
+    <ClInclude Include="vec.h">
+      <Filter>Header Files\Math.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\generalModel.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\indicatorModel.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMei.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiEye.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiFoot.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiHand.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiHead.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiLowerLeg.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\MengMeiView.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\model.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\modelController.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerglobals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaBall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\BezierCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\BSplineCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\CatmullRomCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="model\ParticleSource.h">
+      <Filter>Header Files\Model.</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="cleanskel.pl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="modeleruiwindows.fl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="skelrenamer.pl">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Animator.ncb" />
-    <None Include="cleanskel.pl" />
-    <None Include="modeleruiwindows.fl" />
-    <None Include="skelrenamer.pl" />
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
 </Project>
