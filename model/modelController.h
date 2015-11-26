@@ -73,7 +73,7 @@ public:
 		return this;
 	}
 
-	Mat4f getMatrix();
+	Mat4d getMatrix();
 
 private:
 	struct {
