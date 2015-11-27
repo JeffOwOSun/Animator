@@ -75,4 +75,4 @@ void MengMeiHand::onDraw()
 
 }
 
-MengMeiHand::MengMeiHand() : Model() {}
+MengMeiHand::MengMeiHand(ModelNames name) : Model(name) {}

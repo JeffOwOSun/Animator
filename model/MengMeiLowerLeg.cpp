@@ -34,7 +34,7 @@
 #define LLP45 0.51f, -0.13f, 1.0f
 #define LLP46 0.0f, -0.55f, 1.2f
 
-MengMeiLowerLeg::MengMeiLowerLeg() : Model()
+MengMeiLowerLeg::MengMeiLowerLeg(ModelNames name) : Model(name)
 {
 }
 

@@ -37,9 +37,9 @@ int main()
 	controls[LIGHT1_G] = ModelerControl("Light1 G", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT1_B] = ModelerControl("Light1 B", 0.0f, 1.0f, 0.1f, 1.0f);
     
-	controls[XPOS] = ModelerControl("X Position", -5, 5, 0.1f, 0);
-    controls[YPOS] = ModelerControl("Y Position", 0, 5, 0.1f, 0);
-    controls[ZPOS] = ModelerControl("Z Position", -5, 5, 0.1f, 0);
+	controls[XPOS] = ModelerControl("X Position", -10, 10, 0.1f, 0);
+    controls[YPOS] = ModelerControl("Y Position", -10, 10, 0.1f, 0);
+    controls[ZPOS] = ModelerControl("Z Position", -10, 10, 0.1f, 0);
     controls[HEIGHT] = ModelerControl("Height", 1, 2.5, 0.1f, 1);
 	controls[ROTATE] = ModelerControl("Rotate", -135, 135, 1, 0);
 
@@ -51,33 +51,33 @@ int main()
 	controls[ANGLE_LIMIT] = ModelerControl("Angle Limit", 0, 1, 1, 0);
 
 	controls[INVERSE_KINEMATICS] = ModelerControl("Inverse Kinematics?", 0, 1, 1, 0);
-	controls[HEAD_CSTRN_X] = ModelerControl("Head Constraint X", -10, 10, 0.1, 0);
-	controls[HEAD_CSTRN_Y] = ModelerControl("Head Constraint Y", -10, 10, 0.1, 0);
-	controls[HEAD_CSTRN_Z] = ModelerControl("Head Constraint Z", -10, 10, 0.1, 0);
-	controls[LHAND_CSTRN_X] = ModelerControl("Left Hand Constraint X", -10, 10, 0.1, 0);
-	controls[LHAND_CSTRN_Y] = ModelerControl("Left Hand Constraint Y", -10, 10, 0.1, 0);
-	controls[LHAND_CSTRN_Z] = ModelerControl("Left Hand Constraint Z", -10, 10, 0.1, 0);
-	controls[RHAND_CSTRN_X] = ModelerControl("Right Hand Constraint X", -10, 10, 0.1, 0);
-	controls[RHAND_CSTRN_Y] = ModelerControl("Right Hand Constraint Y", -10, 10, 0.1, 0);
-	controls[RHAND_CSTRN_Z] = ModelerControl("Right Hand Constraint Z", -10, 10, 0.1, 0);
-	controls[LFOOT_CSTRN_X] = ModelerControl("Left Foot Constraint X", -10, 10, 0.1, 0);
-	controls[LFOOT_CSTRN_Y] = ModelerControl("Left Foot Constraint Y", -10, 10, 0.1, 0);
-	controls[LFOOT_CSTRN_Z] = ModelerControl("Left Foot Constraint Z", -10, 10, 0.1, 0);
-	controls[RFOOT_CSTRN_X] = ModelerControl("Right Foot Constraint X", -10, 10, 0.1, 0);
-	controls[RFOOT_CSTRN_Y] = ModelerControl("Right Foot Constraint Y", -10, 10, 0.1, 0);
-	controls[RFOOT_CSTRN_Z] = ModelerControl("Right Foot Constraint Z", -10, 10, 0.1, 0);
+	controls[HEAD_CSTRN_X] = ModelerControl("Head Constraint X", -20, 20, 0.1, 0);
+	controls[HEAD_CSTRN_Y] = ModelerControl("Head Constraint Y", -20, 20, 0.1, 6.0);
+	controls[HEAD_CSTRN_Z] = ModelerControl("Head Constraint Z", -20, 20, 0.1, 0);
+	controls[LHAND_CSTRN_X] = ModelerControl("Left Hand Constraint X", -20, 20, 0.1, 5.356248);
+	controls[LHAND_CSTRN_Y] = ModelerControl("Left Hand Constraint Y", -20, 20, 0.1, 3.550485);
+	controls[LHAND_CSTRN_Z] = ModelerControl("Left Hand Constraint Z", -20, 20, 0.1, 0);
+	controls[RHAND_CSTRN_X] = ModelerControl("Right Hand Constraint X", -20, 20, 0.1, -5.356248);
+	controls[RHAND_CSTRN_Y] = ModelerControl("Right Hand Constraint Y", -20, 20, 0.1, 3.550485);
+	controls[RHAND_CSTRN_Z] = ModelerControl("Right Hand Constraint Z", -20, 20, 0.1, 0);
+	controls[LFOOT_CSTRN_X] = ModelerControl("Left Foot Constraint X", -20, 20, 0.1, 0.942230);
+	controls[LFOOT_CSTRN_Y] = ModelerControl("Left Foot Constraint Y", -20, 20, 0.1, -6.781559);
+	controls[LFOOT_CSTRN_Z] = ModelerControl("Left Foot Constraint Z", -20, 20, 0.1, -0.086824);
+	controls[RFOOT_CSTRN_X] = ModelerControl("Right Foot Constraint X", -20, 20, 0.1, -0.948529);
+	controls[RFOOT_CSTRN_Y] = ModelerControl("Right Foot Constraint Y", -20, 20, 0.1, -6.601208);
+	controls[RFOOT_CSTRN_Z] = ModelerControl("Right Foot Constraint Z", -20, 20, 0.1, -0.760312);
 
 	controls[LEVEL_OF_DETAIL] = ModelerControl("Level of Detail", 1, 10, 1, 10);
 
 	controls[LEFT_ULEG_ROTATE] = ModelerControl("Left Upper Leg Rotate", 0, 80, 1, 0);
 	controls[LEFT_ULEG_SWAYLR] = ModelerControl("Left Upper Leg Sway Left/Right", 0, 90, 1, 0);
-	controls[LEFT_ULEG_SWAYFB] = ModelerControl("Left Upper Leg Sway Front/Back", -60, 150, 1, 0);
+	controls[LEFT_ULEG_SWAYFB] = ModelerControl("Left Upper Leg Sway Front/Back", -60, 150, 1, 10);
 	controls[RIGHT_ULEG_ROTATE] = ModelerControl("Right Upper Leg Rotate", 0, 80, 1, 0);
 	controls[RIGHT_ULEG_SWAYLR] = ModelerControl("Right Upper Leg Sway Left/Right", 0, 90, 1, 0);
-	controls[RIGHT_ULEG_SWAYFB] = ModelerControl("Right Upper Leg Sway Front/Back", -60, 150, 1, 0);
+	controls[RIGHT_ULEG_SWAYFB] = ModelerControl("Right Upper Leg Sway Front/Back", -60, 150, 1, 10);
 
-	controls[LEFT_KNEE] = ModelerControl("Left Knee", 0, 160, 1, 0);
-	controls[RIGHT_KNEE] = ModelerControl("Right Knee", 0, 160, 1, 0);
+	controls[LEFT_KNEE] = ModelerControl("Left Knee", 0, 160, 1, 20);
+	controls[RIGHT_KNEE] = ModelerControl("Right Knee", 0, 160, 1, 20);
 
 	//controls[LEFT_FOOT_UD] = ModelerControl("Left Foot UD", -30, 90, 1, 0);
 	controls[LEFT_FOOT_LR] = ModelerControl("Left Foot LR", -30, 30, 1, 0);

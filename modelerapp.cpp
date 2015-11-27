@@ -133,6 +133,26 @@ void ModelerApplication::SetControlValue(int controlNumber, double value)
 }
 
 //TODO: IMPLEMENT THE FUNCTION CONTROLS NEEDED BY IK
+void ModelerApplication::incrementControlValue(int controlNumber, int times)
+{
+	m_ui->incrementControlValue(controlNumber, times);
+}
+
+void ModelerApplication::randomizeControlValue(int controlNumber, double randomizeCenter, double rangePercentile, double shiftPercentile)
+{
+	m_ui->randomizeControlValue(controlNumber, randomizeCenter, rangePercentile, shiftPercentile);
+}
+
+
+double ModelerApplication::getControlMaximum(int controlNumber)
+{
+	return m_ui->getControlMaximum(controlNumber);
+}
+
+double ModelerApplication::getControlMinimum(int controlNumber)
+{
+	return m_ui->getControlMinimum(controlNumber);
+}
 
 ParticleSystem *ModelerApplication::GetParticleSystem()
 {
@@ -157,6 +177,11 @@ int ModelerApplication::GetFps()
 bool ModelerApplication::Animating()
 {
 	return m_animating;
+}
+
+bool ModelerApplication::IK()
+{
+	return m_ui->IK();
 }
 
 void ModelerApplication::ValueChangedCallback()

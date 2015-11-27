@@ -10,8 +10,8 @@ class ModelerUIWindows {open
   Function {ModelerUIWindows()} {open
   } {
     Fl_Window m_pwndMainWnd {
-      label {CS 341 Animator (Sp02)}
-      xywh {47 31 589 705} color 185 labeltype NORMAL_LABEL when 0 visible
+      label {CS 341 Animator (Sp02)} open
+      xywh {502 103 589 705} color 185 labeltype NORMAL_LABEL when 0 visible
     } {
       Fl_Menu_Bar m_pmbMenuBar {selected
         xywh {0 0 590 25} selection_color 137 labelsize 12 textsize 12
@@ -89,11 +89,11 @@ class ModelerUIWindows {open
         xywh {5 55 145 440} type Multi selection_color 29 labeltype NO_LABEL textsize 10
       }
       Fl_Tabs m_ptabTab {
-        user_data this
+        user_data this open
         xywh {155 30 430 510} color 185 align 0
       } {
         Fl_Scroll m_pscrlScroll {
-          label Modeler open
+          label Modeler
           xywh {155 50 430 490} type VERTICAL_ALWAYS labelsize 12 when 1 hide resizable
         } {
           Fl_Pack m_ppckPack {
@@ -177,15 +177,15 @@ class ModelerUIWindows {open
         }
       }
       Fl_Group {} {
-        label {Animation Controls}
+        label {Animation Controls} open
         xywh {5 510 580 190} labeltype NO_LABEL
       } {
         Fl_Group {} {
-          label Playback
+          label Playback open
           xywh {95 550 490 150} labeltype NO_LABEL resizable
         } {
           Fl_Group {} {
-            label {Playback Controls}
+            label {Playback Controls} open
             xywh {155 550 430 55} box ENGRAVED_BOX labeltype NO_LABEL
           } {
             Fl_Button m_pbtStepBack {
@@ -221,6 +221,16 @@ class ModelerUIWindows {open
             Fl_Box {} {
               label {Playback Controls}
               xywh {165 555 135 20} labelsize 12 align 20
+            }
+            Fl_Light_Button m_pbtIK {
+              label IK
+              user_data this
+              xywh {270 555 35 20} labelsize 12
+            }
+            Fl_Light_Button m_pbtAngleLimit {
+              label AngleLimit
+              user_data this
+              xywh {305 555 85 20} labelsize 12
             }
           }
           Fl_Group m_pwndIndicatorWnd {

@@ -1,6 +1,6 @@
 #include "indicatorModel.h"
 
-IndicatorModel::IndicatorModel() : Model() {}
+IndicatorModel::IndicatorModel(ModelNames name) : Model(name) {}
 
 void IndicatorModel::onDraw() {
 	setDiffuseColor(COLOR_RED);

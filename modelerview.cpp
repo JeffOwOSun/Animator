@@ -110,6 +110,9 @@ void ModelerView::draw()
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     m_camera->applyViewingTransform();
 
+	//CUSTOM: for our big big mengmei
+	glScaled(0.5, 0.5, 0.5);
+
 	onLighting();
 
 	// If particle system exists, draw it
