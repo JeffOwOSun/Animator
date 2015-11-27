@@ -199,27 +199,38 @@ MengMei::MengMei() :Model(MENGMEI)
 	IndicatorModel* headConstraint = new IndicatorModel(HEADCONSTRAINT);
 	headConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(HEAD_CSTRN_X), VAL(HEAD_CSTRN_Y), VAL(HEAD_CSTRN_Z));
+		((IndicatorModel*)self)->m_draw = ModelerApplication::Instance()->IK();
 	};
 
 	IndicatorModel* leftHandConstraint = new IndicatorModel(LHANDCONSTRAINT);
 	leftHandConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(LHAND_CSTRN_X), VAL(LHAND_CSTRN_Y), VAL(LHAND_CSTRN_Z));
+		((IndicatorModel*)self)->m_draw = ModelerApplication::Instance()->IK();
 	};
 
 	IndicatorModel* rightHandConstraint = new IndicatorModel(RHANDCONSTRAINT);
 	rightHandConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(RHAND_CSTRN_X), VAL(RHAND_CSTRN_Y), VAL(RHAND_CSTRN_Z));
+		((IndicatorModel*)self)->m_draw = ModelerApplication::Instance()->IK();
 	};
 
 	IndicatorModel* leftFootConstraint = new IndicatorModel(LFOOTCONSTRAINT);
 	leftFootConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(LFOOT_CSTRN_X), VAL(LFOOT_CSTRN_Y), VAL(LFOOT_CSTRN_Z));
+		((IndicatorModel*)self)->m_draw = ModelerApplication::Instance()->IK();
 	};
 
 	IndicatorModel* rightFootConstraint = new IndicatorModel(RFOOTCONSTRAINT);
 	rightFootConstraint->m_beforeDraw = [](Model* self) {
 		self->getController()->setTrans(VAL(RFOOT_CSTRN_X), VAL(RFOOT_CSTRN_Y), VAL(RFOOT_CSTRN_Z));
+		((IndicatorModel*)self)->m_draw = ModelerApplication::Instance()->IK();
 	};
+
+	this->addChild(leftHandConstraint);
+	this->addChild(rightHandConstraint);
+	this->addChild(leftFootConstraint);
+	this->addChild(rightFootConstraint);
+	this->addChild(headConstraint);
 
 	//set the position of MengMei
 	this->m_beforeDraw = [](Model* self){
