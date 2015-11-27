@@ -106,6 +106,7 @@ protected:
 	/*float get_time(int frame) {
 		return (float)frame / bake_fps;
 	}*/
+	double m_groundY;
 
 private:
 	/** Constructor **/

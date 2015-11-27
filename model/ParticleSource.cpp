@@ -1,4 +1,5 @@
 #include "ParticleSource.h"
+#include "../modelerapp.h"
 #include <cmath>
 #define PI 3.14159265358979
 
@@ -21,7 +22,7 @@ void ParticleSource::newParticles(Particles& particles) {
 			velocity.normalize();
 		}
 		
-		particle.velocity = (mtx * velocity - particle.position) * speed;
+		particle.velocity = (mtx * velocity - particle.position) * speed + m_velocity;
 
 		particles.push_back(particle);
 	}
@@ -29,7 +30,17 @@ void ParticleSource::newParticles(Particles& particles) {
 
 void ParticleSource::onDraw()
 {
-	//DO NOTHING	
+	float time = ModelerApplication::Instance()->GetTime();
+	Vec3d origin = getOrigin();
+	if (m_lastTime < time) {
+		m_velocity = (origin - m_lastPos) / (time - m_lastTime);
+	}
+	else {
+		m_velocity = Vec3d(0, 0, 0);
+	}
+
+	m_lastPos = origin;
+	m_lastTime = time;
 }
 
 ParticleSource::~ParticleSource() {}

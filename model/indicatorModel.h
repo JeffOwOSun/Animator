@@ -7,6 +7,7 @@ class IndicatorModel: public Model{
 public:
 	IndicatorModel(ModelNames name);
 	void onDraw();
+	bool m_draw;
 };
 
 #endif //INDICATOR_MODEL_H

@@ -57,13 +57,6 @@ void MengMeiView::draw()
 		//DO INVERSE KINEMATICS
 
 		if (ModelerApplication::Instance()->IK()) {
-			//draw the constraint points
-			Model::m_modelList[HEADCONSTRAINT]->Draw();
-			Model::m_modelList[LHANDCONSTRAINT]->Draw();
-			Model::m_modelList[RHANDCONSTRAINT]->Draw();
-			Model::m_modelList[LFOOTCONSTRAINT]->Draw();
-			Model::m_modelList[RFOOTCONSTRAINT]->Draw();
-
 			//get the optimized parameters
 			IK::optimize();
 		}

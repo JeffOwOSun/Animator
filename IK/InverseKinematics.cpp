@@ -33,7 +33,7 @@ void IK::optimize() {
 	srand(time(NULL));
 	//store statusQuo
 	saveStatusQuo();
-	//optimizeAnneal();
+	optimizeAnneal();
 	optimizeGradientDesc();
 }
 
@@ -139,31 +139,31 @@ double IK::targetCost() {
 	//head cost
 	Model::m_modelList[HEAD]->refreshParameters();
 	Vec3d headPos = Model::m_modelList[HEAD]->getOrigin();
-	Vec3d headConstraint(VAL(HEAD_CSTRN_X), VAL(HEAD_CSTRN_Y), VAL(HEAD_CSTRN_Z));
+	Vec3d headConstraint = Model::m_modelList[HEADCONSTRAINT]->getOrigin();
 	double headCost = (headPos - headConstraint).length2();
 
 	//left hand cost
 	Model::m_modelList[LEFTHAND]->refreshParameters();
 	Vec3d leftHandPos = Model::m_modelList[LEFTHAND]->getOrigin();
-	Vec3d leftHandConstraint(VAL(LHAND_CSTRN_X), VAL(LHAND_CSTRN_Y), VAL(LHAND_CSTRN_Z));
+	Vec3d leftHandConstraint = Model::m_modelList[LHANDCONSTRAINT]->getOrigin();
 	double leftHandCost = (leftHandPos - leftHandConstraint).length2();
 
 	//right hand cost
 	Model::m_modelList[RIGHTHAND]->refreshParameters();
 	Vec3d rightHandPos = Model::m_modelList[RIGHTHAND]->getOrigin();
-	Vec3d rightHandConstraint(VAL(RHAND_CSTRN_X), VAL(RHAND_CSTRN_Y), VAL(RHAND_CSTRN_Z));
+	Vec3d rightHandConstraint = Model::m_modelList[RHANDCONSTRAINT]->getOrigin();
 	double rightHandCost = (rightHandPos - rightHandConstraint).length2();
 
 	//left foot cost
 	Model::m_modelList[LEFTFOOT]->refreshParameters();
 	Vec3d leftFootPos = Model::m_modelList[LEFTFOOT]->getOrigin();
-	Vec3d leftFootConstraint(VAL(LFOOT_CSTRN_X), VAL(LFOOT_CSTRN_Y), VAL(LFOOT_CSTRN_Z));
+	Vec3d leftFootConstraint = Model::m_modelList[LFOOTCONSTRAINT]->getOrigin();
 	double leftFootCost = (leftFootPos - leftFootConstraint).length2();
 
 	//right foot cost
 	Model::m_modelList[RIGHTFOOT]->refreshParameters();
 	Vec3d rightFootPos = Model::m_modelList[RIGHTFOOT]->getOrigin();
-	Vec3d rightFootConstraint(VAL(RFOOT_CSTRN_X), VAL(RFOOT_CSTRN_Y), VAL(RFOOT_CSTRN_Z));
+	Vec3d rightFootConstraint = Model::m_modelList[RFOOTCONSTRAINT]->getOrigin();
 	double rightFootCost = (rightFootPos - rightFootConstraint).length2();
 #ifdef _DEBUG
 	//printf("head %f lHand %f rhand %f lfoot %f rfoot %f\n", headCost, leftHandCost, rightHandCost, leftFootCost, rightFootCost);
