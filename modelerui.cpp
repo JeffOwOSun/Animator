@@ -759,7 +759,11 @@ float ModelerUI::controlValue(int iControl) const
 #ifdef _DEBUG
 	assert(iControl >= 0 && iControl < m_iCurrControlCount);
 #endif _DEBUG
-
+	if (IK() && isDOF(iControl)) { //if in IK mode //if a degree of freedom
+		//always get from sliders, no curves
+		return valueSlider(iControl)->value();
+	}
+	
 	if (m_ptabTab->value() != (Fl_Widget*)m_pgrpCurveGroup) {
 		// slider control mode
 		return valueSlider(iControl)->value();
@@ -775,6 +779,58 @@ void ModelerUI::controlValue(int iControl, float fVal)
 	valueSlider(iControl)->value(fVal);
 	if (m_pcbfValueChangedCallback)
 		m_pcbfValueChangedCallback();
+}
+
+void ModelerUI::incrementControlValue(int controlNumber, int times)
+{
+	Fl_Value_Slider* slider = valueSlider(controlNumber);
+	double value = slider->value() + times * slider->step();
+	if (isAngleLimit())
+	value = slider->clamp(value);
+	slider->value(value);
+}
+
+void ModelerUI::randomizeControlValue(int controlNumber, double randomizeCenter, double rangePercentile, double shiftPercentile)
+{
+	//find the bound of the slider
+	Fl_Value_Slider* slider = valueSlider(controlNumber);
+	double uBound = slider->maximum();
+	double lBound = slider->minimum();
+	double range = uBound - lBound;
+	//Find the interval of randomization. Apply clamp to ensure not out of range
+	double uIntervalub = randomizeCenter + range * (rangePercentile + shiftPercentile);
+	double uIntervallb = randomizeCenter + range * shiftPercentile;
+	double lIntervallb = 2 * randomizeCenter - uIntervalub;
+	double lIntervalub = 2 * randomizeCenter - uIntervallb;
+	if (isAngleLimit()) {
+		uIntervalub = slider->clamp(uIntervalub);
+		uIntervallb = slider->clamp(uIntervallb);
+		lIntervalub = slider->clamp(lIntervalub);
+		lIntervallb = slider->clamp(lIntervallb);
+	}
+	double lrandomRange = uIntervalub - uIntervallb;
+	double urandomRange = lIntervalub - lIntervallb;
+
+	//get randomizedValue
+	double randNum = (double)rand() / RAND_MAX;
+	double randomizedValue = randNum * (lrandomRange + urandomRange);
+	if (randomizedValue > lrandomRange) {
+		randomizedValue = randomizedValue - lrandomRange + uIntervallb;
+	}
+	else {
+		randomizedValue = randomizedValue + lIntervallb;
+	}
+	slider->value(randomizedValue);
+}
+
+double ModelerUI::getControlMaximum(int controlNumber)
+{
+	return valueSlider(controlNumber)->maximum();
+}
+
+double ModelerUI::getControlMinimum(int controlNumber)
+{
+	return valueSlider(controlNumber)->minimum();
 }
 
 void ModelerUI::setValueChangedCallback(ValueChangedCallback* pcbf) 
@@ -797,6 +853,27 @@ void ModelerUI::simulate(bool bSimulate)
 	else {
 		m_pbtSimulate->clear();
 	}
+}
+
+//tell if currently is in IK mode
+bool ModelerUI::IK() const
+{
+	if (m_pbtIK->value())
+		return true;
+	return false;
+}
+
+//tell if the given control is one of the degree of freedom slider.
+bool ModelerUI::isDOF(int iControl) const
+{
+	return (iControl > LEVEL_OF_DETAIL && iControl < NUMCONTROLS);
+}
+
+bool ModelerUI::isAngleLimit() const
+{
+	if (m_pbtAngleLimit->value())
+		return true;
+	return false;
 }
 
 void ModelerUI::redrawModelerView()

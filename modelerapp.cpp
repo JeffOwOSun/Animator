@@ -135,57 +135,23 @@ void ModelerApplication::SetControlValue(int controlNumber, double value)
 //TODO: IMPLEMENT THE FUNCTION CONTROLS NEEDED BY IK
 void ModelerApplication::incrementControlValue(int controlNumber, int times)
 {
-	/*Fl_Value_Slider* slider = m_controlValueSliders[controlNumber];
-	double value = slider->value() + times * slider->step();
-	if (VAL(ANGLE_LIMIT) > 0)
-		value = slider->clamp(value);
-	slider->value(value);*/
+	m_ui->incrementControlValue(controlNumber, times);
 }
 
 void ModelerApplication::randomizeControlValue(int controlNumber, double randomizeCenter, double rangePercentile, double shiftPercentile)
 {
-	////find the bound of the slider
-	//Fl_Value_Slider* slider = m_controlValueSliders[controlNumber];
-	//double uBound = slider->maximum();
-	//double lBound = slider->minimum();
-	//double range = uBound - lBound;
-	////Find the interval of randomization. Apply clamp to ensure not out of range
-	//double uIntervalub = randomizeCenter + range * (rangePercentile + shiftPercentile);
-	//double uIntervallb = randomizeCenter + range * shiftPercentile;
-	//double lIntervallb = 2 * randomizeCenter - uIntervalub;
-	//double lIntervalub = 2 * randomizeCenter - uIntervallb;
-	//if (VAL(ANGLE_LIMIT) > 0) {
-	//	uIntervalub = slider->clamp(uIntervalub);
-	//	uIntervallb = slider->clamp(uIntervallb);
-	//	lIntervalub = slider->clamp(lIntervalub);
-	//	lIntervallb = slider->clamp(lIntervallb);
-	//}
-	//double lrandomRange = uIntervalub - uIntervallb;
-	//double urandomRange = lIntervalub - lIntervallb;
-
-	////get randomizedValue
-	//double randNum = (double)rand() / RAND_MAX;
-	//double randomizedValue = randNum * (lrandomRange + urandomRange);
-	//if (randomizedValue > lrandomRange) {
-	//	randomizedValue = randomizedValue - lrandomRange + uIntervallb;
-	//}
-	//else {
-	//	randomizedValue = randomizedValue + lIntervallb;
-	//}
-	//slider->value(randomizedValue);
+	m_ui->randomizeControlValue(controlNumber, randomizeCenter, rangePercentile, shiftPercentile);
 }
 
 
 double ModelerApplication::getControlMaximum(int controlNumber)
 {
-	/*return m_controlValueSliders[controlNumber]->maximum();*/
-	return 0.0;
+	return m_ui->getControlMaximum(controlNumber);
 }
 
 double ModelerApplication::getControlMinimum(int controlNumber)
 {
-	/*return m_controlValueSliders[controlNumber]->minimum();*/
-	return 0.0;
+	return m_ui->getControlMinimum(controlNumber);
 }
 
 ParticleSystem *ModelerApplication::GetParticleSystem()

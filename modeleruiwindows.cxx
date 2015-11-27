@@ -180,7 +180,11 @@ ModelerUIWindows::ModelerUIWindows() {
             o->labelsize(12);
             o->align(FL_ALIGN_LEFT|FL_ALIGN_INSIDE);
           }
-          { Fl_Light_Button* o = m_pbtIK = new Fl_Light_Button(270, 555, 70, 20, "IK");
+          { Fl_Light_Button* o = m_pbtIK = new Fl_Light_Button(270, 555, 35, 20, "IK");
+            o->labelsize(12);
+            o->user_data((void*)(this));
+          }
+          { Fl_Light_Button* o = m_pbtAngleLimit = new Fl_Light_Button(305, 555, 85, 20, "AngleLimit");
             o->labelsize(12);
             o->user_data((void*)(this));
           }
