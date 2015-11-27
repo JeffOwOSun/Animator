@@ -222,6 +222,11 @@ class ModelerUIWindows {open
               label {Playback Controls}
               xywh {165 555 135 20} labelsize 12 align 20
             }
+            Fl_Light_Button m_pbtIK {
+              label IK
+              user_data this
+              xywh {270 555 70 20} labelsize 12
+            }
           }
           Fl_Group m_pwndIndicatorWnd {
             user_data this

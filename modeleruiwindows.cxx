@@ -49,7 +49,7 @@ Fl_Menu_Item ModelerUIWindows::menu_m_pchoCurveType[] = {
 
 ModelerUIWindows::ModelerUIWindows() {
   Fl_Window* w;
-  { Fl_Window* o = m_pwndMainWnd = new Fl_Window(589, 705, "CS 341Animator (SP02)");
+  { Fl_Window* o = m_pwndMainWnd = new Fl_Window(589, 705, "CS 341 Animator (Sp02)");
     w = o;
     o->color(185);
     o->labeltype(FL_NORMAL_LABEL);
@@ -179,6 +179,10 @@ ModelerUIWindows::ModelerUIWindows() {
           { Fl_Box* o = new Fl_Box(165, 555, 135, 20, "Playback Controls");
             o->labelsize(12);
             o->align(FL_ALIGN_LEFT|FL_ALIGN_INSIDE);
+          }
+          { Fl_Light_Button* o = m_pbtIK = new Fl_Light_Button(270, 555, 70, 20, "IK");
+            o->labelsize(12);
+            o->user_data((void*)(this));
           }
           o->end();
         }

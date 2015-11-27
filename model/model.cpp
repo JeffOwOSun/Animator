@@ -5,7 +5,7 @@
 #include "model.h"
 #include <Fl/gl.h>
 
-//map<ModelNames, Model* > Model::m_modelList;
+map<ModelNames, Model* > Model::m_modelList;
 
 Model::Model(ModelNames name, Model* parent) :m_parent(parent), m_beforeDraw(NULL)
 {
