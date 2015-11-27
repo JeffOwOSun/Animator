@@ -8,7 +8,7 @@
 class MengMeiHead : public Model
 {
 public:
-	MengMeiHead();
+	MengMeiHead(ModelNames name);
 	void onDraw();
 private:
 	Model* m_leftEye;

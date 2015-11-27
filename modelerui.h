@@ -33,12 +33,21 @@ public:
 	float playEndTime() const;
 	void controlValue(int iControl, float fVal);
 	float controlValue(int iControl) const;
+	//CUSTOM METHODS FOR IK
+	void incrementControlValue(int controlNumber, int times);
+	void randomizeControlValue(int controlNumber, double randomizeCenter, double rangePercentile, double shiftPercentile);
+	double getControlMaximum(int controlNumber);
+	double getControlMinimum(int controlNumber);
+
 	void setValueChangedCallback(ValueChangedCallback* pcbf);
 	void animate(bool bAnimate);
 	int fps();
 	void fps(int fps);
 	bool simulate() const;
 	void simulate(bool bSimulate);
+	bool IK() const; //tell if I'm currently in IK mode
+	bool isDOF(int iControl) const; //tell if the given control is a degree of freedom.
+	bool isAngleLimit() const;
 	void redrawModelerView();
     void autoLoadNPlay();
 
@@ -138,6 +147,7 @@ private:
 	inline void cb_loop_i(Fl_Light_Button*, void*);
 	static void cb_loop(Fl_Light_Button*, void*);
 	static void cb_timed(void *); // timed callback for animation
+	static void cb_toggleIK(Fl_Light_Button*, void*);
 };
 
 #endif

@@ -2,9 +2,9 @@
 #define INVERSE_KINEMATICS_H
 
 #include<vector>
-#include"modelerglobals.h"
-#include"modelerapp.h"
-#include"model\model.h"
+#include"../modelerglobals.h"
+#include"../modelerapp.h"
+#include"../model/model.h"
 
 class IK
 {
@@ -39,7 +39,7 @@ private:
 
 	//parameters for the learning
 	static const int maxNumIteration = 1000;
-	static const double epselon;
+	static const double epsilon;
 	static const double targetCostCoeff;
 	static const double statusQuoCoeff;
 	

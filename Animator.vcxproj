@@ -151,6 +151,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="IK\InverseKinematics.cpp" />
     <ClCompile Include="Curves\BezierCurveEvaluator.cpp" />
     <ClCompile Include="Curves\BSplineCurveEvaluator.cpp" />
     <ClCompile Include="Curves\C2InterpolatingEvaluator.cpp" />
@@ -271,6 +272,7 @@
   <ItemGroup>
     <ClInclude Include="curve.h" />
     <ClInclude Include="curveevaluator.h" />
+    <ClInclude Include="IK\InverseKinematics.h" />
     <ClInclude Include="Curves\BezierCurveEvaluator.h" />
     <ClInclude Include="Curves\BSplineCurveEvaluator.h" />
     <ClInclude Include="Curves\C2InterpolatingEvaluator.h" />

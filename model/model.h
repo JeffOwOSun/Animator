@@ -12,7 +12,7 @@
 class Model
 {
 public:
-	Model(Model* parent = NULL);
+	Model(ModelNames name, Model* parent = NULL);
 
 	modelController* getController()
 	{
@@ -60,7 +60,7 @@ public:
 	bool isAnimating();
 
 	//The static map of models
-	//static std::map < ModelNames, Model* > m_modelList;
+	static std::map < ModelNames, Model* > m_modelList;
 
 	//function pointer, callback before draw to update necessary informations;
 	typedef void(*modelCallback)(Model*);

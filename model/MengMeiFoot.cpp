@@ -231,4 +231,4 @@ void MengMeiFoot::onDraw()
 	//drawSphere(0.5f);
 }
 
-MengMeiFoot::MengMeiFoot() :Model() {}
+MengMeiFoot::MengMeiFoot(ModelNames name) :Model(name) {}
