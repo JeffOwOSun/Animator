@@ -43,14 +43,6 @@ int main()
     controls[HEIGHT] = ModelerControl("Height", 1, 2.5, 0.1f, 1);
 	controls[ROTATE] = ModelerControl("Rotate", -135, 135, 1, 0);
 
-	controls[LSYS_SHOW] = ModelerControl("L-System Show", 0, 1, 1, 0);
-	controls[LSYS_TYPE] = ModelerControl("L-System Type", 0, 1, 1, 0);
-	controls[LSYS_DEPTH] = ModelerControl("L-System Depth", 1, 10, 1, 1);
-	controls[LSYS_ANGLE] = ModelerControl("L-System Angle", 0, 90, 1, 45);
-
-	controls[ANGLE_LIMIT] = ModelerControl("Angle Limit", 0, 1, 1, 0);
-
-	controls[INVERSE_KINEMATICS] = ModelerControl("Inverse Kinematics?", 0, 1, 1, 0);
 	controls[HEAD_CSTRN_X] = ModelerControl("Head Constraint X", -20, 20, 0.1, 0);
 	controls[HEAD_CSTRN_Y] = ModelerControl("Head Constraint Y", -20, 20, 0.1, 6.0);
 	controls[HEAD_CSTRN_Z] = ModelerControl("Head Constraint Z", -20, 20, 0.1, 0);
