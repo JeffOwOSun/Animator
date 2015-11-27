@@ -219,6 +219,8 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="model\ParticleSource.cpp" />
+    <ClCompile Include="ObjDivider\ObjFile.cpp" />
+    <ClCompile Include="ObjDivider\ObjUtil.cpp" />
     <ClCompile Include="particle.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -299,6 +301,8 @@
     <ClInclude Include="model\model.h" />
     <ClInclude Include="model\modelController.h" />
     <ClInclude Include="model\ParticleSource.h" />
+    <ClInclude Include="ObjDivider\ObjFile.h" />
+    <ClInclude Include="ObjDivider\ObjUtil.h" />
     <ClInclude Include="particle.h" />
     <ClInclude Include="particleSystem.h" />
     <ClInclude Include="point.h" />

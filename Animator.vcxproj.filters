@@ -46,6 +46,12 @@
     <Filter Include="Source Files\Inverse Kinematics">
       <UniqueIdentifier>{d3866859-f13d-46a9-9f1c-2b687bd44e96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ObjDivider">
+      <UniqueIdentifier>{7d61c9b4-176c-4e7c-8696-cf54d9253b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjDivider">
+      <UniqueIdentifier>{fbb94686-5e8f-4508-86bf-cee7e88a4397}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="curve.cpp">
@@ -164,6 +170,12 @@
     </ClCompile>
     <ClCompile Include="Curves\C2InterpolatingEvaluator.cpp">
       <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDivider\ObjFile.cpp">
+      <Filter>Source Files\ObjDivider</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDivider\ObjUtil.cpp">
+      <Filter>Source Files\ObjDivider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +301,12 @@
     </ClInclude>
     <ClInclude Include="Curves\C2InterpolatingEvaluator.h">
       <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDivider\ObjFile.h">
+      <Filter>Header Files\ObjDivider</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDivider\ObjUtil.h">
+      <Filter>Header Files\ObjDivider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

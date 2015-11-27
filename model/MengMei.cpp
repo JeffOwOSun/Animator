@@ -10,6 +10,7 @@
 #include "ParticleSource.h"
 #include "../modelerapp.h"
 #include "../particleSystem.h"
+#include "../ObjDivider/ObjFile.h"
 
 MengMei::MengMei() :Model(MENGMEI)
 {
@@ -243,6 +244,53 @@ void MengMei::onDraw()
 	glPushMatrix();
 	drawSphere(0.8f);
 	glPopMatrix();
+
+	glPushMatrix();
+
+	glTranslatef(4.5f, 5.0f, 0.0f);
+	glScalef(0.8f, 0.8f, 0.8f);
+	
+	int divisionLevel = VAL(DIVISION_LEVEL);
+
+	ObjFile* objFile = new ObjFile("objModel/star.ply");
+	objFile->defineUserControl(VAL(DIVISION_CONTROL1),VAL(DIVISION_CONTROL2),
+		VAL(DIVISION_CONTROL3),VAL(DIVISION_CONTROL4));
+	if (divisionLevel == 0) {
+		objFile->createModel(true);
+	}
+	else {
+		objFile->findAdjTriangles();
+		for (int i = 0; i < divisionLevel; ++i)
+		{
+			objFile->subdivide();
+		}
+		objFile->createModel(false);
+	}
+	printf("Vertices %d\n", objFile->vertices_.size());
+	delete objFile;
+	glPopMatrix();
+
+	glTranslatef(-4.5f, 5.0f, 0.0f);
+	glScalef(0.8f, 0.8f, 0.8f);
+
+	ObjFile* objFile2 = new ObjFile("objModel/star.ply");
+	objFile2->defineUserControl(VAL(DIVISION_CONTROL1), VAL(DIVISION_CONTROL2),
+		VAL(DIVISION_CONTROL3), VAL(DIVISION_CONTROL4));
+	if (divisionLevel == 0) {
+		objFile2->createModel(true);
+	}
+	else {
+		objFile2->findAdjTriangles();
+		for (int i = 0; i < divisionLevel; ++i)
+		{
+			objFile2->subdivide();
+		}
+		objFile2->createModel(false);
+	}
+	printf("Vertices %d\n", objFile2->vertices_.size());
+	delete objFile2;
+	glPopMatrix();
+
 
 	//delete mb;
 	glPushMatrix();
