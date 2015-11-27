@@ -1,7 +1,7 @@
 #pragma warning(disable : 4786)
 
 #include "particleSystem.h"
-
+#include "modelerapp.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -89,6 +89,7 @@ void ParticleSystem::resetSimulation(float t)
 /** Compute forces and update particles **/
 void ParticleSystem::computeForcesAndUpdateParticles(float t)
 {
+	m_gravity[1] = -VAL(PS_GRAVITY);
 #ifdef _DEBUG
 #if 0 //just curious
 	if (m_cache.find(t) == m_cache.end())
