@@ -10,6 +10,7 @@
 #include "ParticleSource.h"
 #include "../modelerapp.h"
 #include "../particleSystem.h"
+#include "../ObjDivider/ObjFile.h"
 
 MengMei::MengMei() :Model(MENGMEI)
 {
@@ -232,6 +233,9 @@ void MengMei::onDraw()
 	glPushMatrix();
 	drawSphere(0.8f);
 	glPopMatrix();
+
+	ObjFile objFile("objs/tetra.ply");
+	objFile.createModel(true);
 
 	//delete mb;
 	glPushMatrix();
