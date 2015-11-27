@@ -14,7 +14,7 @@
  * Constructors
  ***************/
 
-ParticleSystem::ParticleSystem() : bake_fps(19), simulate(false), dirty(false), m_gravity(0, -10, 0)
+ParticleSystem::ParticleSystem() : bake_fps(30), simulate(false), dirty(false), m_gravity(0, -10, 0), m_groundY(-10.0)
 {
 	// TODO
 
@@ -142,7 +142,13 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 
 						//evolve
 						particle.position += particle.velocity * delta_t;
-						particle.velocity += m_gravity * delta_t;
+						if (particle.position[1] < m_groundY) {
+							particle.position[1] = 2 * m_groundY - particle.position[1];
+							particle.velocity[1] = -particle.velocity[1];
+						}
+						else {
+							particle.velocity += m_gravity * delta_t;
+						}
 					}
 				}	
 			}
@@ -156,6 +162,11 @@ void ParticleSystem::drawParticles(float t)
 {
 	auto iter = m_cache.find(get_frame(t));
 	if (iter == m_cache.end()) return; //do nothing if this frame is not yet baken
+
+	glPushMatrix();
+	glTranslated(-10, m_groundY, -10);
+	drawBox(20, 0.1, 20);
+	glPopMatrix();
 
 	Particles& particles = iter->second;
 	for (Particle & particle : particles) {
