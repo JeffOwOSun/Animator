@@ -143,7 +143,7 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 
 						//evolve
 						particle.position += particle.velocity * delta_t;
-						if (particle.position[1] < m_groundY) {
+						if (ModelerApplication::Instance()->rb() && particle.position[1] < m_groundY) {
 							particle.position[1] = 2 * m_groundY - particle.position[1];
 							particle.velocity[1] = -particle.velocity[1];
 						}
