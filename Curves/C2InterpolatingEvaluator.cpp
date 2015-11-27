@@ -21,15 +21,13 @@ void C2InterpolatingEvaluator::evaluateCurve(const std::vector<Point>& controlPo
 	evaluatedPoints.clear();
 
 	vector<Point> controlPointsCopy;
-	evaluatedPoints.push_back(Point(0, controlPoints.front().y));
 	controlPointsCopy.insert(controlPointsCopy.end(), controlPoints.begin(), controlPoints.end());
 	controlPointsCopy.push_back(Point(controlPointsCopy.front().x + animationLength,
 		controlPointsCopy.front().y));
 
 
 	vector<float> derivativePoints(controlPointsCopy.size(), 0.0);
-	int controlN = controlPoints.size() - 1;
-	
+	int controlN = beWrap ? controlPoints.size() : controlPoints.size() - 1;
 	this->_evaluateDerivative(derivativePoints, controlPointsCopy, controlN);
 
 	for (int i = 0; i < controlN; i++) 
@@ -38,7 +36,8 @@ void C2InterpolatingEvaluator::evaluateCurve(const std::vector<Point>& controlPo
 			controlPointsCopy, evaluatedPoints, derivativePoints);
 	}
 
-	evaluatedPoints.push_back(Point(animationLength, evaluatedPoints.back().y));
+	if (!beWrap) evaluatedPoints.push_back(Point(0, controlPoints.front().y));
+	if (!beWrap) evaluatedPoints.push_back(Point(animationLength, evaluatedPoints.back().y));
 }
 
 void C2InterpolatingEvaluator::_evaluate(const int p1, const int p2, const float& animationLength,
@@ -64,10 +63,9 @@ void C2InterpolatingEvaluator::_evaluate(const int p1, const int p2, const float
 		double t = i / (double)SEGMENT;
 		float eval_y = Vec4d(t*t*t, t*t, t, 1) * vec;
 
-		float len = controlPointsCopy[p2].x - controlPointsCopy[p1].x;
-		// still quick fix ?
-		if (len < 0) len += animationLength;
-		float eval_x = controlPointsCopy[p1].x + t * len;
+		float length_x = controlPointsCopy[p2].x - controlPointsCopy[p1].x;
+		if (length_x < 0) length_x += animationLength;
+		float eval_x = controlPointsCopy[p1].x + t * length_x;
 		eval_x = fmod(eval_x, animationLength);
 		evaluatedPoints.push_back(Point(eval_x, eval_y));
 	}
