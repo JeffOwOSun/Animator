@@ -91,6 +91,11 @@ int main()
 	controls[RIGHT_UARM_ROTATE] = ModelerControl("Right Uarm Rotate", -90, 90, 1, 0);
 
 	controls[DIVISION_LEVEL] = ModelerControl("Division Level", 0, 10, 1, 0);
+	controls[DIVISION_CONTROL1] = ModelerControl("Division Control1", 0, 2, 0.2, 1);
+	controls[DIVISION_CONTROL2] = ModelerControl("Division Control2", 0, 2, 0.2, 1);
+	controls[DIVISION_CONTROL3] = ModelerControl("Division Control3", 0, 2, 0.2, 1);
+	controls[DIVISION_CONTROL4] = ModelerControl("Division Control4", 0, 2, 0.2, 1);
+
 
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
 	ModelerApplication::Instance()->SetParticleSystem(&ParticleSystem::Instance());

@@ -27,6 +27,7 @@ public:
 	void findAdjTriangles();
 	void subdivide();
 	void computeNormals();
+	void defineUserControl(double a, double b, double c, double d);
 
 	void triangleSplit(int index, int callee, int newPoint, int t1, int t2);
 	void loadNormalIndices();

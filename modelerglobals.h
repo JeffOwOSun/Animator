@@ -115,6 +115,10 @@ enum ModelControls
 	RIGHT_UARM_ROTATE,
 	// Subdivision control part
 	DIVISION_LEVEL,
+	DIVISION_CONTROL1,
+	DIVISION_CONTROL2,
+	DIVISION_CONTROL3,
+	DIVISION_CONTROL4,
 	//Make sure this stays at the last
 	NUMCONTROLS
 };

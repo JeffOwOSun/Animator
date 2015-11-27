@@ -61,6 +61,17 @@ ObjFile::ObjFile(string file)
 	}
 }
 
+void ObjFile::defineUserControl(double a, double b, double c, double d)
+{
+	int size = vertices_.size();
+	int partition = size / 4;
+	vertices_[0] *= a;
+	vertices_[partition] *= b;
+	vertices_[partition * 2] *= c;
+	vertices_[partition * 3] *= d;
+}
+
+
 GLuint ObjFile::createModel(bool flat)
 {
 	glBegin(GL_TRIANGLES);
