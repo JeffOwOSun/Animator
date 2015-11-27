@@ -1,5 +1,5 @@
 /*
-* BezierCurveEvaluator.cpp
+* BSplineCurveEvaluator.h
 *
 * Author: Qi Haozhi, Sun Yushi
 * Copyright (c) 2015 Qi Haozhi, Sun Yushi
