@@ -33,7 +33,7 @@ void IK::optimize() {
 	srand(time(NULL));
 	//store statusQuo
 	saveStatusQuo();
-	//optimizeAnneal();
+	optimizeAnneal();
 	optimizeGradientDesc();
 }
 
