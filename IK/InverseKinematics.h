@@ -2,9 +2,9 @@
 #define INVERSE_KINEMATICS_H
 
 #include<vector>
-#include"modelerglobals.h"
-#include"modelerapp.h"
-#include"model\model.h"
+#include"../modelerglobals.h"
+#include"../modelerapp.h"
+#include"../model/model.h"
 
 class IK
 {
