@@ -221,7 +221,10 @@ MengMei::MengMei() :Model(MENGMEI)
 		self->getController()->setTrans(VAL(RFOOT_CSTRN_X), VAL(RFOOT_CSTRN_Y), VAL(RFOOT_CSTRN_Z));
 	};
 
-	getController()->setTrans(0.0, 2.0, 0.0);
+	//set the position of MengMei
+	this->m_beforeDraw = [](Model* self){
+		self->getController()->setTrans(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
+	};
 }
 
 void MengMei::onDraw()

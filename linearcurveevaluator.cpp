@@ -1,5 +1,7 @@
 #include "LinearCurveEvaluator.h"
 #include <assert.h>
+#include <iostream>
+using namespace std;
 
 void LinearCurveEvaluator::evaluateCurve(const std::vector<Point>& ptvCtrlPts, 
 										 std::vector<Point>& ptvEvaluatedCurvePts, 
@@ -9,6 +11,9 @@ void LinearCurveEvaluator::evaluateCurve(const std::vector<Point>& ptvCtrlPts,
 	int iCtrlPtCount = ptvCtrlPts.size();
 
 	ptvEvaluatedCurvePts.assign(ptvCtrlPts.begin(), ptvCtrlPts.end());
+
+	// add debug infos 
+	// cout << "control point size is " << iCtrlPtCount << endl;
 
 	float x = 0.0;
 	float y1;

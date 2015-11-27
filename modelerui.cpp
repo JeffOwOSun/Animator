@@ -383,6 +383,13 @@ void ModelerUI::cb_wrap(Fl_Light_Button* o, void* v)
 	((ModelerUI*)(o->user_data()))->cb_wrap_i(o,v);
 }
 
+void ModelerUI::cb_toggleIK(Fl_Light_Button* o, void* v)
+{
+	((ModelerUI*)(o->user_data()))->m_pwndGraphWidget->redraw();
+	((ModelerUI*)(o->user_data()))->m_pwndIndicatorWnd->redraw();
+	((ModelerUI*)(o->user_data()))->m_psldrTimeSlider->redraw();
+}
+
 inline void ModelerUI::cb_indicatorWnd_i(IndicatorWindow*, void*) 
 {
 	currTime(m_pwndIndicatorWnd->floatingIndicator());
@@ -985,6 +992,7 @@ m_bSaveMovie(false)
 	m_pbtLoop->callback((Fl_Callback*)cb_loop);
 	m_pbtSimulate->callback((Fl_Callback*)cb_simulate);
 	m_psldrFPS->callback((Fl_Callback*)cb_fps);
+	m_pbtIK->callback((Fl_Callback*)cb_toggleIK);
 
 	m_pwndMainWnd->callback((Fl_Callback*)cb_hide);
 	m_pwndMainWnd->when(FL_HIDE);

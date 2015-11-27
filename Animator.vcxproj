@@ -152,6 +152,9 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="IK\InverseKinematics.cpp" />
+    <ClCompile Include="Curves\BezierCurveEvaluator.cpp" />
+    <ClCompile Include="Curves\BSplineCurveEvaluator.cpp" />
+    <ClCompile Include="Curves\CatmullRomCurveEvaluator.cpp" />
     <ClCompile Include="linearcurveevaluator.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -269,6 +272,9 @@
     <ClInclude Include="curve.h" />
     <ClInclude Include="curveevaluator.h" />
     <ClInclude Include="IK\InverseKinematics.h" />
+    <ClInclude Include="Curves\BezierCurveEvaluator.h" />
+    <ClInclude Include="Curves\BSplineCurveEvaluator.h" />
+    <ClInclude Include="Curves\CatmullRomCurveEvaluator.h" />
     <ClInclude Include="linearcurveevaluator.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="MarchingCube.h" />

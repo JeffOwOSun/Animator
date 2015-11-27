@@ -147,6 +147,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Curves\BezierCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="Curves\BSplineCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="Curves\CatmullRomCurveEvaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
     <ClCompile Include="model\ParticleSource.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
@@ -259,6 +268,15 @@
     </ClInclude>
     <ClInclude Include="MarchingCube.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\BezierCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\BSplineCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves\CatmullRomCurveEvaluator.h">
+      <Filter>Header Files\Curves.</Filter>
     </ClInclude>
     <ClInclude Include="model\ParticleSource.h">
       <Filter>Header Files\Model.</Filter>

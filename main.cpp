@@ -37,9 +37,9 @@ int main()
 	controls[LIGHT1_G] = ModelerControl("Light1 G", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT1_B] = ModelerControl("Light1 B", 0.0f, 1.0f, 0.1f, 1.0f);
     
-	controls[XPOS] = ModelerControl("X Position", -5, 5, 0.1f, 0);
-    controls[YPOS] = ModelerControl("Y Position", 0, 5, 0.1f, 0);
-    controls[ZPOS] = ModelerControl("Z Position", -5, 5, 0.1f, 0);
+	controls[XPOS] = ModelerControl("X Position", -10, 10, 0.1f, 0);
+    controls[YPOS] = ModelerControl("Y Position", -10, 10, 0.1f, 0);
+    controls[ZPOS] = ModelerControl("Z Position", -10, 10, 0.1f, 0);
     controls[HEIGHT] = ModelerControl("Height", 1, 2.5, 0.1f, 1);
 	controls[ROTATE] = ModelerControl("Rotate", -135, 135, 1, 0);
 

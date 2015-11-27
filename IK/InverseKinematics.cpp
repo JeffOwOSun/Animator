@@ -33,7 +33,7 @@ void IK::optimize() {
 	srand(time(NULL));
 	//store statusQuo
 	saveStatusQuo();
-	optimizeAnneal();
+	//optimizeAnneal();
 	optimizeGradientDesc();
 }
 
@@ -192,7 +192,7 @@ double IK::costFunction() {
 	double target = targetCostCoeff > 0 ? targetCost() : 0.0;
 	double statusQuo = statusQuoCoeff > 0 ? statusQuoCost() : 0.0;
 #ifdef _DEBUG
-	//printf("targetCost %f, statusQuoCost %f ", target, statusQuo);
+	//printf("targetCost %f, statusQuoCost %f \n", target, statusQuo);
 #endif
 	return targetCostCoeff * target + statusQuoCoeff * statusQuo;
 }

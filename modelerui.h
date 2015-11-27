@@ -147,7 +147,7 @@ private:
 	inline void cb_loop_i(Fl_Light_Button*, void*);
 	static void cb_loop(Fl_Light_Button*, void*);
 	static void cb_timed(void *); // timed callback for animation
-	//static void cb_toggleIK(Fl_Light_Button*, void*);
+	static void cb_toggleIK(Fl_Light_Button*, void*);
 };
 
 #endif
