@@ -39,7 +39,7 @@ private:
 
 	//parameters for the learning
 	static const int maxNumIteration = 1000;
-	static const double epselon;
+	static const double epsilon;
 	static const double targetCostCoeff;
 	static const double statusQuoCoeff;
 	

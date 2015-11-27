@@ -27,7 +27,7 @@ MengMei::MengMei() :Model(MENGMEI)
 			//--------------------------------
 			GeneralModel* leftUpperArm = new GeneralModel(LEFTUPPERARM, GeneralModel::CYLINDER_SHAPE);
 			leftUpperArm->setParam(2.7f, 0.6f, 0.5f);
-			leftUpperArm->getController()->setRotate(70, 180, -60);
+			leftUpperArm->getController()->setRotate(70, 180, 0);
 			
 				GeneralModel* leftElbow = new GeneralModel(LEFTELBOW, GeneralModel::SPHERE_SHAPE);
 				leftElbow->setParam(0.6f);

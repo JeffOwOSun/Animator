@@ -17,7 +17,7 @@ std::vector<double> IK::momentum = std::vector<double>(vectorLength, 0.0);
 std::vector<double> IK::statusQuo = std::vector<double>(vectorLength, 0.0);
 std::vector<double> IK::currState = std::vector<double>(vectorLength, 0.0);
 
-const double IK::epselon = 0.00001;
+const double IK::epsilon = 0.00001;
 const double IK::targetCostCoeff = 8;
 const double IK::statusQuoCoeff = 3;
 
@@ -96,7 +96,7 @@ void IK::optimizeGradientDesc() {
 		printf("cost%d: %f\n", i, thisCost);
 #endif
 		//break if the change is small enough
-		if (abs(lastCost - thisCost) < epselon) break;
+		if (abs(lastCost - thisCost) < epsilon) break;
 		lastCost = thisCost;
 	}
 }

@@ -65,6 +65,8 @@ public:
 	// Returns animating flag
 	bool Animating();
 
+	//IK
+	bool IK();
 	//CUSTOM: Get increment the slider
 	void   incrementControlValue(int controlNumber, int times);
 	//CUSTOM: Randomize the slider value, with given randomization Center and the percent

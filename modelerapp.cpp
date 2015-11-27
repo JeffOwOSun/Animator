@@ -179,6 +179,11 @@ bool ModelerApplication::Animating()
 	return m_animating;
 }
 
+bool ModelerApplication::IK()
+{
+	return m_ui->IK();
+}
+
 void ModelerApplication::ValueChangedCallback()
 {
 
