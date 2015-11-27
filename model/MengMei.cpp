@@ -234,8 +234,28 @@ void MengMei::onDraw()
 	drawSphere(0.8f);
 	glPopMatrix();
 
-	ObjFile objFile("objs/tetra.ply");
-	objFile.createModel(true);
+	glPushMatrix();
+
+	glTranslatef(4.5f, -0.25f, 0.0f);
+	glScalef(3.0f, 3.0f, 3.0f);
+	
+	int divisionLevel = VAL(DIVISION_LEVEL);
+
+	ObjFile* objFile = new ObjFile("objModel/star.ply");
+	if (divisionLevel == 0) {
+		objFile->createModel(true);
+	}
+	else {
+		objFile->findAdjTriangles();
+		for (int i = 0; i < divisionLevel; ++i)
+		{
+			objFile->subdivide();
+		}
+		objFile->createModel(false);
+	}
+	printf("Vertices %d\n", objFile->vertices_.size());
+
+	glPopMatrix();
 
 	//delete mb;
 	glPushMatrix();

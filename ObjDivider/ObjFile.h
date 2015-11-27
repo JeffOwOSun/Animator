@@ -24,8 +24,9 @@ public:
 
 	ObjFile(std::string file);
 	GLuint createModel(bool flat = false);
-
-protected:
+	void findAdjTriangles();
+	void subdivide();
+	void computeNormals();
 
 	void triangleSplit(int index, int callee, int newPoint, int t1, int t2);
 	void loadNormalIndices();

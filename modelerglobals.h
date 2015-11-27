@@ -113,6 +113,8 @@ enum ModelControls
 	//upperarm rotation
 	LEFT_UARM_ROTATE,
 	RIGHT_UARM_ROTATE,
+	// Subdivision control part
+	DIVISION_LEVEL,
 	//Make sure this stays at the last
 	NUMCONTROLS
 };

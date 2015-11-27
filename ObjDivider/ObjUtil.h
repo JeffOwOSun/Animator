@@ -16,7 +16,11 @@ class Triangle
 {
 public:
 	enum TriangleMode { VERTICES = 0, NORMALS = 1, TEXTURE = 2 };
+	
 	Triangle();
+	int containsEdge(int n1, int n2) const;
+	int findNeighborIndex(int) const;
+	int getVertexIndex(int) const;
 
 	int v[3];	// index to vertices
 	int n[3];	// index to normals
