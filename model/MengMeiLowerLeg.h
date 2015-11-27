@@ -7,7 +7,7 @@
 class MengMeiLowerLeg : public Model
 {
 public:
-	MengMeiLowerLeg();
+	MengMeiLowerLeg(ModelNames name);
 	void onDraw();
 
 private:

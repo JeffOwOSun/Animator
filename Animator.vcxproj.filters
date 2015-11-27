@@ -40,6 +40,12 @@
       <UniqueIdentifier>{133b5350-744c-4417-8892-0df5578ace47}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
+    <Filter Include="Header Files\Inverse Kinematics">
+      <UniqueIdentifier>{9067fd68-f4af-4c74-a9b4-3a73a2845367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Inverse Kinematics">
+      <UniqueIdentifier>{d3866859-f13d-46a9-9f1c-2b687bd44e96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="curve.cpp">
@@ -143,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="model\ParticleSource.cpp">
       <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="IK\InverseKinematics.cpp">
+      <Filter>Source Files\Inverse Kinematics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="model\ParticleSource.h">
       <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="IK\InverseKinematics.h">
+      <Filter>Header Files\Inverse Kinematics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

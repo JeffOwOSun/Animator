@@ -1,7 +1,7 @@
 #include "generalModel.h"
 #include <cassert>
 
-GeneralModel::GeneralModel(ShapeType type) :Model(), m_shape_type(type), m_texturePath("") {}
+GeneralModel::GeneralModel(ModelNames name, ShapeType type) :Model(name), m_shape_type(type), m_texturePath("") {}
 
 //the onDraw function of the general model
 void GeneralModel::onDraw() {

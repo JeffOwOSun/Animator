@@ -7,11 +7,11 @@
 
 //map<ModelNames, Model* > Model::m_modelList;
 
-Model::Model(Model* parent) :m_parent(parent), m_beforeDraw(NULL)
+Model::Model(ModelNames name, Model* parent) :m_parent(parent), m_beforeDraw(NULL)
 {
 	anim_cnt = 0;
 	//add this model to the static modelList
-	//m_modelList[name] = this;
+	m_modelList[name] = this;
 }
 
 void Model::addChild(Model* p_model)

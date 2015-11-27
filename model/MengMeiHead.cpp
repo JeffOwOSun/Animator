@@ -137,14 +137,14 @@
 
 
 
-MengMeiHead::MengMeiHead() : Model()
+MengMeiHead::MengMeiHead(ModelNames name) : Model(name)
 {
-	m_leftEye = new MengMeiEye();
+	m_leftEye = new MengMeiEye(LEFTEYE);
 	m_leftEye->getController()->setTransX(0.3f)->setTransY(0.85f)->setTransZ(0.35f)->setRotateX(-90)->setRotateY(90);
 	addChild(m_leftEye);
 	printf("add left eye");
 
-	m_rightEye = new MengMeiEye();
+	m_rightEye = new MengMeiEye(RIGHTEYE);
 	m_rightEye->getController()->setTransX(-0.3f)->setTransY(0.85f)->setTransZ(0.35f)
 		->setRotateX(-90)->setRotateY(90);
 	addChild(m_rightEye);
